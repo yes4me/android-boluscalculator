@@ -49,6 +49,7 @@ This document will show you how to:
 ---
 
 * This was tested on Moto X, Android version 5.1
+* The UI was tested using the Android automation, Expresso, with the Test Recoder.
 
 ## Other notes
 ---
