@@ -38,24 +38,43 @@ public class BolusCalculator {
     GETTER AND SETTERS
     ============================================================================================= */
 
-    public void setBgCalc_min(double bgCalc_min) {
-        Log.d(TAG, "bgCalc_min = " + bgCalc_min);
-        this.bgCalc_min = bgCalc_min;
-    }
-
-    public void setBgCalc_max(double bgCalc_max) {
-        Log.d(TAG, "bgCalc_max = " + bgCalc_max);
-        this.bgCalc_max = bgCalc_max;
-    }
-
     public void setDurationBolusCalculatorOn(double durationBolusCalculatorOn) {
         Log.d(TAG, "durationBolusCalculatorOn = " + durationBolusCalculatorOn);
         this.durationBolusCalculatorOn = durationBolusCalculatorOn;
     }
 
+    public double getDurationBolusCalculatorOn() {
+        return durationBolusCalculatorOn;
+    }
+
     public void setDurationInsulinAction(double durationInsulinAction) {
         Log.d(TAG, "durationInsulinAction = " + durationInsulinAction);
         this.durationInsulinAction = durationInsulinAction;
+    }
+
+    public double getDurationInsulinAction() {
+        return durationInsulinAction;
+    }
+
+
+    public void setBgCalc_min(double bgCalc_min) {
+        Log.d(TAG, "bgCalc_min = " + bgCalc_min);
+        if (bgCalc_min <= bgTarget)
+            this.bgCalc_min = bgCalc_min;
+    }
+
+    public double getBgCalc_min() {
+        return bgCalc_min;
+    }
+
+    public void setBgCalc_max(double bgCalc_max) {
+        Log.d(TAG, "bgCalc_max = " + bgCalc_max);
+        if (bgCorrectAbove <= bgCalc_max)
+            this.bgCalc_max = bgCalc_max;
+    }
+
+    public double getBgCalc_max() {
+        return bgCalc_max;
     }
 
     public void setReverseCorrection(boolean reverseCorrection) {
@@ -72,14 +91,28 @@ public class BolusCalculator {
         this.bgCurrent = bgCurrent;
     }
 
+    public double getBgCurrent() {
+        return bgCurrent;
+    }
+
     public void setBgTarget(double bgTarget) {
         Log.d(TAG, "bgTarget = " + bgTarget);
-        this.bgTarget = bgTarget;
+        if ((bgCalc_min <= bgTarget) && (bgTarget <= bgCorrectAbove))
+            this.bgTarget = bgTarget;
+    }
+
+    public double getBgTarget() {
+        return bgTarget;
     }
 
     public void setBgCorrectAbove(double bgCorrectAbove) {
         Log.d(TAG, "bgCorrectAbove = " + bgCorrectAbove);
-        this.bgCorrectAbove = bgCorrectAbove;
+        if ((bgTarget <= bgCorrectAbove) && (bgCorrectAbove <= bgCalc_max))
+            this.bgCorrectAbove = bgCorrectAbove;
+    }
+
+    public double getBgCorrectAbove() {
+        return bgCorrectAbove;
     }
 
     public void setCorrectionFactor(double correctionFactor) {
@@ -87,24 +120,48 @@ public class BolusCalculator {
         this.correctionFactor = correctionFactor;
     }
 
+    public double getCorrectionFactor() {
+        return correctionFactor;
+    }
+
     public void setAdjustmentMeal_IOB(double adjustmentMeal_IOB) {
         Log.d(TAG, "adjustmentMeal_IOB = " + adjustmentMeal_IOB);
-        this.adjustmentMeal_IOB = adjustmentMeal_IOB;
+        if (adjustmentMeal_IOB >=0)
+            this.adjustmentMeal_IOB = adjustmentMeal_IOB;
+    }
+
+    public double getAdjustmentMeal_IOB() {
+        return adjustmentMeal_IOB;
     }
 
     public void setAdjustmentCorrection_IOB(double adjustmentCorrection_IOB) {
         Log.d(TAG, "adjustmentCorrection_IOB = " + adjustmentCorrection_IOB);
-        this.adjustmentCorrection_IOB = adjustmentCorrection_IOB;
+        if (adjustmentCorrection_IOB >=0)
+            this.adjustmentCorrection_IOB = adjustmentCorrection_IOB;
+    }
+
+    public double getAdjustmentCorrection_IOB() {
+        return adjustmentCorrection_IOB;
     }
 
     public void setMealCarbs(double mealCarbs) {
         Log.d(TAG, "mealCarbs = " + mealCarbs);
-        this.mealCarbs = mealCarbs;
+        if (mealCarbs >=0)
+            this.mealCarbs = mealCarbs;
+    }
+
+    public double getMealCarbs() {
+        return mealCarbs;
     }
 
     public void setMeal_ic_ratio(double meal_ic_ratio) {
         Log.d(TAG, "meal_ic_ratio = " + meal_ic_ratio);
-        this.meal_ic_ratio = meal_ic_ratio;
+        if (meal_ic_ratio >=0)
+            this.meal_ic_ratio = meal_ic_ratio;
+    }
+
+    public double getMeal_ic_ratio() {
+        return meal_ic_ratio;
     }
 
     public double getCorrectionBolus() {
@@ -114,7 +171,8 @@ public class BolusCalculator {
     public double getMealBolus() {
         return mealBolus;
     }
-/* =============================================================================================
+
+    /* =============================================================================================
     CALCULATION
     ============================================================================================= */
 
