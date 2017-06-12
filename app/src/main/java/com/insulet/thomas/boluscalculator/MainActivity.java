@@ -76,8 +76,8 @@ public class MainActivity extends AppCompatActivity implements EditText.OnEditor
 
         button_reverse_correction = (Button)  findViewById(R.id.button_reverse_correction);
         button_reverse_correction.setOnClickListener(this);
-        updateBackgroundReverseCorrection();
-        //updateData();
+        //updateBackgroundReverseCorrection();
+        updateData();
 
         // Calculate the result
         bolusCalculator.updateResult();
