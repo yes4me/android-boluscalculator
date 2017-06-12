@@ -21,7 +21,7 @@
     <string name="text_header_iob_adjustment">IOB Adjustment</string>
     <string name="text_view_meal_iob">Meal IOB adj: </string>
     <string name="edit_text_meal_iob">0</string>
-    <string name="text_view_correction_iob">corr IOB adj: </string>
+    <string name="text_view_correction_iob">correction IOB adj: </string>
     <string name="edit_text_correction_iob">0</string>
 
     <string name="text_header_meal_bolus">Meal Bolus</string>

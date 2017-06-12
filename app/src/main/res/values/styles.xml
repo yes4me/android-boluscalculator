@@ -49,19 +49,7 @@
         <item name="android:inputType">number</item>
         <item name="android:selectAllOnFocus">true</item>
         <item name="android:imeOptions">actionDone</item>
-    </style>
-    <style name="edit_text_current_BG">
-        <item name="android:textSize">@dimen/text_edit_size</item>
-        <item name="android:textColor">@color/text_edit</item>
-        <item name="android:typeface">monospace</item>
-        <item name="android:layout_width">@dimen/text_edit_width</item>
-        <item name="android:layout_height">@dimen/text_height</item>
-        <item name="android:singleLine">true</item>
-        <item name="android:layout_margin">@dimen/margin_view_size</item>
-        <item name="android:maxLength">3</item>
-        <item name="android:inputType">numberDecimal|numberSigned</item>
-        <item name="android:selectAllOnFocus">true</item>
-        <item name="android:imeOptions">actionDone</item>
+        <item name="android:textAlignment">textEnd</item>
     </style>
     <style name="edit_text_decimal">
         <item name="android:textSize">@dimen/text_edit_size</item>
@@ -75,6 +63,21 @@
         <item name="android:inputType">numberDecimal</item>
         <item name="android:selectAllOnFocus">true</item>
         <item name="android:imeOptions">actionDone</item>
+        <item name="android:textAlignment">textEnd</item>
+    </style>
+    <style name="edit_text_current_BG">
+        <item name="android:textSize">@dimen/text_edit_size</item>
+        <item name="android:textColor">@color/text_edit</item>
+        <item name="android:typeface">monospace</item>
+        <item name="android:layout_width">@dimen/text_edit_width</item>
+        <item name="android:layout_height">@dimen/text_height</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:layout_margin">@dimen/margin_view_size</item>
+        <item name="android:maxLength">3</item>
+        <item name="android:inputType">numberDecimal|numberSigned</item>
+        <item name="android:selectAllOnFocus">true</item>
+        <item name="android:imeOptions">actionDone</item>
+        <item name="android:textAlignment">textEnd</item>
     </style>
 
     <style name="text_result">
