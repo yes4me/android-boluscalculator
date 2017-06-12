@@ -3,6 +3,7 @@ package com.insulet.thomas.boluscalculator.bolus;
 import android.util.Log;
 
 import com.insulet.thomas.boluscalculator.util.MyNumber;
+import com.insulet.thomas.boluscalculator.util.MyString;
 
 /**
  * Created by thomas on 6/11/2017.
@@ -253,7 +254,7 @@ public class BolusCalculator {
         double totalBolus = correctionBolus + mealBolus;
         if (totalBolus < 0)
             totalBolus = 0;
-        result += "\nTOTAL BOLUS = " + totalBolus;
+        result += "\nTOTAL BOLUS = " + MyString.simplify(totalBolus);
         return result;
     }
 }

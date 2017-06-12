@@ -68,6 +68,7 @@
     <style name="edit_text_current_BG">
         <item name="android:textSize">@dimen/text_edit_size</item>
         <item name="android:textColor">@color/text_edit</item>
+        <item name="android:textStyle">bold</item>
         <item name="android:typeface">monospace</item>
         <item name="android:layout_width">@dimen/text_edit_width</item>
         <item name="android:layout_height">@dimen/text_height</item>
