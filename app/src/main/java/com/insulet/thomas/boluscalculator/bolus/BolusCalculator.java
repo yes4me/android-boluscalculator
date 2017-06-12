@@ -21,8 +21,8 @@ public class BolusCalculator {
     private double bgCorrectAbove	= 115;	// bgCurrent needs to be above the bgCorrectAbove to be corrected
     private double bgCurrent		= 90;  // use negative value when it is not recorded
     private double correctionFactor = 50;
-    private double adjustmentMeal_IOB = 0.5;
-    private double adjustmentCorrection_IOB = 0.6;
+    private double adjustmentMeal_IOB = 0;
+    private double adjustmentCorrection_IOB = 0;
 
     private double mealCarbs		= 47;		// in g
     private double meal_ic_ratio	= 15;		// in g/U
@@ -248,13 +248,39 @@ public class BolusCalculator {
         }
 
         String result;
-        result = "correction bolus = " + correctionBolus;
-        result += "\nmeal bolus = " + mealBolus;
+        result = "correction bolus = " + MyString.simplify(correctionBolus, 2);
+        result += "\nmeal bolus = " + MyString.simplify(mealBolus, 2);
 
         double totalBolus = correctionBolus + mealBolus;
         if (totalBolus < 0)
             totalBolus = 0;
-        result += "\nTOTAL BOLUS = " + MyString.simplify(totalBolus);
+        result += "\nTOTAL BOLUS = " + MyString.simplify(totalBolus, 2);
+        return result;
+    }
+    public String getResult2() {
+        if (bgCorrectAbove < bgTarget) {
+            return "BG target must always be less than BG CorrectAbove";
+        }
+        if (bgCurrent > 0) {
+            // BG is recorded, check for special cases
+            if (bgCurrent < bgCalc_min) {
+                return "Too LOW BG! Go to hospital!";
+            } else if (bgCurrent > bgCalc_max) {
+                return "Too HIGH BG! Go to hospital!";
+            }
+        }
+        if (durationBolusCalculatorOn < durationInsulinAction) {
+            return "Bolus calculator is turned OFF during the Duration of Insulin Action (DIA)";
+        }
+
+        String result;
+        result = "correction bolus = " + MyString.simplify(correctionBolus, 2);
+        result += "\nmeal bolus = " + MyString.simplify(mealBolus, 2);
+
+        double totalBolus = correctionBolus + mealBolus;
+        if (totalBolus < 0)
+            totalBolus = 0;
+        result += "\nTOTAL BOLUS = " + MyString.simplify(totalBolus, 2);
         return result;
     }
 }

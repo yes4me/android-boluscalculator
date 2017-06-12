@@ -77,6 +77,7 @@ public class MainActivity extends AppCompatActivity implements EditText.OnEditor
         button_reverse_correction = (Button)  findViewById(R.id.button_reverse_correction);
         button_reverse_correction.setOnClickListener(this);
         updateBackgroundReverseCorrection();
+        //updateData();
 
         // Calculate the result
         bolusCalculator.updateResult();
@@ -117,7 +118,13 @@ public class MainActivity extends AppCompatActivity implements EditText.OnEditor
             case R.id.edit_text_bg_current:
                 bolusCalculator.setBgCurrent(value);
                 edit_text_bg_current.setText( MyString.simplify(bolusCalculator.getBgCurrent()) );
-                break;
+
+                bolusCalculator.updateResult();
+                String result = bolusCalculator.getResult2();
+                text_view_result.setText(result);
+                return false;
+
+//                break;
             case R.id.edit_text_correction_factor:
                 bolusCalculator.setCorrectionFactor(value);
                 edit_text_correction_factor.setText( MyString.simplify(bolusCalculator.getCorrectionFactor()) );
@@ -163,6 +170,19 @@ public class MainActivity extends AppCompatActivity implements EditText.OnEditor
         text_view_result.setText(result);
     }
 
+    public void updateData() {
+        edit_text_bg_calc_min.setText( MyString.simplify(bolusCalculator.getBgCalc_min()) );
+        edit_text_bg_calc_max.setText( MyString.simplify(bolusCalculator.getBgCalc_max()) );
+        edit_text_bg_target.setText( MyString.simplify(bolusCalculator.getBgTarget()) );
+        edit_text_bg_correctabove.setText( MyString.simplify(bolusCalculator.getBgCorrectAbove()) );
+        edit_text_bg_current.setText( MyString.simplify(bolusCalculator.getBgCurrent()) );
+        edit_text_correction_factor.setText( MyString.simplify(bolusCalculator.getCorrectionFactor()) );
+        edit_text_meal_iob.setText( MyString.simplify(bolusCalculator.getAdjustmentMeal_IOB()) );
+        edit_text_correction_iob.setText( MyString.simplify(bolusCalculator.getAdjustmentCorrection_IOB()) );
+        edit_text_meal_carbs.setText( MyString.simplify(bolusCalculator.getMealCarbs()) );
+        edit_text_meal_ratio.setText( MyString.simplify(bolusCalculator.getMeal_ic_ratio()) );
+        updateBackgroundReverseCorrection();
+    }
     private void updateBackgroundReverseCorrection() {
         boolean status = bolusCalculator.isReverseCorrection();
         if (status) {

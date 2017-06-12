@@ -136,19 +136,19 @@
     Correction Bolus: IOB Adjustment
     ============================================================================================ -->
 
-    <TextView
-        style="@style/text_header"
-        android:id="@+id/text_header_iob_adjustment"
-        android:text="@string/text_header_iob_adjustment"
-        app:layout_constraintTop_toBottomOf="@+id/edit_text_bg_current"
-        />
+    <!--<TextView-->
+        <!--style="@style/text_header"-->
+        <!--android:id="@+id/text_header_iob_adjustment"-->
+        <!--android:text="@string/text_header_iob_adjustment"-->
+        <!--app:layout_constraintTop_toBottomOf="@+id/edit_text_bg_current"-->
+        <!--/>-->
 
     <TextView
         style="@style/text_view"
         android:id="@+id/text_view_meal_iob"
         android:text="@string/text_view_meal_iob"
-        app:layout_constraintLeft_toLeftOf="@+id/text_header_iob_adjustment"
-        app:layout_constraintTop_toBottomOf="@+id/text_header_iob_adjustment"
+        app:layout_constraintLeft_toLeftOf="@+id/text_view_bg_current"
+        app:layout_constraintTop_toBottomOf="@+id/text_view_bg_current"
         />
     <EditText
         style="@style/edit_text_decimal"

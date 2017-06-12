@@ -1,5 +1,7 @@
 package com.insulet.thomas.boluscalculator.util;
 
+import java.text.DecimalFormat;
+
 /**
  * Created by thomas on 6/11/2017.
  */
@@ -15,6 +17,12 @@ public class MyString {
         System.out.format(format, text, value);
     }
 
+    public static String simplify(double value, int digits) {
+        String format = "";
+        for (int i=0; i<digits;i ++)
+            format += "#";
+        return (format=="")? simplify(value) : new DecimalFormat("#####."+ format).format(value);
+    }
     public static String simplify(String text) {
         return text.replaceAll("\\.[0]*$", "");
     }
