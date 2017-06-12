@@ -257,30 +257,4 @@ public class BolusCalculator {
         result += "\nTOTAL BOLUS = " + MyString.simplify(totalBolus, 2);
         return result;
     }
-    public String getResult2() {
-        if (bgCorrectAbove < bgTarget) {
-            return "BG target must always be less than BG CorrectAbove";
-        }
-        if (bgCurrent > 0) {
-            // BG is recorded, check for special cases
-            if (bgCurrent < bgCalc_min) {
-                return "Too LOW BG! Go to hospital!";
-            } else if (bgCurrent > bgCalc_max) {
-                return "Too HIGH BG! Go to hospital!";
-            }
-        }
-        if (durationBolusCalculatorOn < durationInsulinAction) {
-            return "Bolus calculator is turned OFF during the Duration of Insulin Action (DIA)";
-        }
-
-        String result;
-        result = "correction bolus = " + MyString.simplify(correctionBolus, 2);
-        result += "\nmeal bolus = " + MyString.simplify(mealBolus, 2);
-
-        double totalBolus = correctionBolus + mealBolus;
-        if (totalBolus < 0)
-            totalBolus = 0;
-        result += "\nTOTAL BOLUS = " + MyString.simplify(totalBolus, 2);
-        return result;
-    }
 }

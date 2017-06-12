@@ -118,13 +118,7 @@ public class MainActivity extends AppCompatActivity implements EditText.OnEditor
             case R.id.edit_text_bg_current:
                 bolusCalculator.setBgCurrent(value);
                 edit_text_bg_current.setText( MyString.simplify(bolusCalculator.getBgCurrent()) );
-
-                bolusCalculator.updateResult();
-                String result = bolusCalculator.getResult2();
-                text_view_result.setText(result);
-                return false;
-
-//                break;
+                break;
             case R.id.edit_text_correction_factor:
                 bolusCalculator.setCorrectionFactor(value);
                 edit_text_correction_factor.setText( MyString.simplify(bolusCalculator.getCorrectionFactor()) );
