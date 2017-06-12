@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">BolusCalculator</string>
+    <string name="action_settings">Bolus Calculator</string>
+
+    <string name="text_header_bg_range">BG range for Calculation</string>
+    <string name="text_view_bg_calc_min">min: </string>
+    <string name="text_edit_bg_calc_min">70</string>
+    <string name="text_view_bg_calc_max">max: </string>
+    <string name="text_edit_bg_calc_max">600</string>
+
+    <string name="text_header_correction_bolus">Correction Bolus</string>
+    <string name="text_view_bg_target">target BG: </string>
+    <string name="text_edit_bg_target">110</string>
+    <string name="text_view_bg_correctabove">correct above BG: </string>
+    <string name="text_edit_bg_correctabove">115</string>
+    <string name="text_view_bg_current">current BG: </string>
+    <string name="text_edit_bg_current">90</string>
+    <string name="text_view_correction_factor">correction factor: </string>
+    <string name="text_edit_correction_factor">50</string>
+
+    <string name="text_header_iob_adjustment">IOB Adjustment</string>
+    <string name="text_view_meal_iob">Meal IOB adj: </string>
+    <string name="text_edit_meal_iob">0</string>
+    <string name="text_view_correction_iob">corr IOB adj: </string>
+    <string name="text_edit_correction_iob">0</string>
+
+    <string name="text_header_meal_bolus">Meal Bolus</string>
+    <string name="text_view_meal_carbs">Carb: </string>
+    <string name="text_edit_meal_carbs">47</string>
+    <string name="text_view_meal_ratio">IC Ratio: </string>
+    <string name="text_edit_meal_ratio">15</string>
+
+    <string name="text_button_reverse_correction">reverse\ncorrection</string>
+    <string name="text_view_result"></string>
+</resources>

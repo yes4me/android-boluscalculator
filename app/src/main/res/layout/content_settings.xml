@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.insulet.thomas.boluscalculator.MainActivity"
+    tools:showIn="@layout/activity_main">
+
+    <!-- ===========================================================================================
+    Settings
+    ============================================================================================ -->
+
+    <TextView
+        style="@style/text_header"
+        android:id="@+id/text_header_bg_range"
+        android:text="@string/text_header_bg_range"
+        android:textSize="@dimen/text_header_size"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="-73dp"
+        tools:layout_editor_absoluteX="36dp"/>
+
+    <TextView
+        style="@style/text_view"
+        android:id="@+id/text_view_bg_calc_min"
+        android:text="@string/text_view_bg_calc_min"
+        app:layout_constraintLeft_toLeftOf="@+id/text_header_bg_range"
+        app:layout_constraintTop_toBottomOf="@+id/text_header_bg_range"
+        />
+    <EditText
+        style="@style/edit_text_number"
+        android:id="@+id/edit_text_bg_calc_min"
+        android:text="@string/text_edit_bg_calc_min"
+        app:layout_constraintLeft_toRightOf="@+id/text_view_bg_calc_min"
+        app:layout_constraintTop_toTopOf="@+id/text_view_bg_calc_min"
+        app:layout_constraintBottom_toBottomOf="@+id/text_view_bg_calc_min"
+        />
+
+    <TextView
+        style="@style/text_view"
+        android:id="@+id/text_view_bg_calc_max"
+        android:text="@string/text_view_bg_calc_max"
+        app:layout_constraintLeft_toRightOf="@+id/edit_text_bg_calc_min"
+        app:layout_constraintTop_toTopOf="@+id/edit_text_bg_calc_min"
+        app:layout_constraintBottom_toBottomOf="@+id/edit_text_bg_calc_min"
+        />
+    <EditText
+        style="@style/edit_text_number"
+        android:id="@+id/edit_text_bg_calc_max"
+        android:text="@string/text_edit_bg_calc_max"
+        app:layout_constraintLeft_toRightOf="@+id/text_view_bg_calc_max"
+        app:layout_constraintTop_toTopOf="@+id/text_view_bg_calc_max"
+        app:layout_constraintBottom_toBottomOf="@+id/text_view_bg_calc_max"
+        />
+
+    <!-- ===========================================================================================
+    Correction Bolus: init
+    ============================================================================================ -->
+
+    <TextView
+        style="@style/text_header"
+        android:id="@+id/text_header_correction_bolus"
+        android:text="@string/text_header_correction_bolus"
+        app:layout_constraintTop_toBottomOf="@+id/edit_text_bg_calc_max"
+        />
+
+    <TextView
+        style="@style/text_view"
+        android:id="@+id/text_view_bg_target"
+        android:text="@string/text_view_bg_target"
+        app:layout_constraintLeft_toLeftOf="@+id/text_header_correction_bolus"
+        app:layout_constraintTop_toBottomOf="@+id/text_header_correction_bolus"
+        />
+    <EditText
+        style="@style/edit_text_number"
+        android:id="@+id/text_edit_bg_target"
+        android:text="@string/text_edit_bg_target"
+        app:layout_constraintLeft_toRightOf="@+id/text_view_bg_target"
+        app:layout_constraintTop_toTopOf="@+id/text_view_bg_target"
+        app:layout_constraintBottom_toBottomOf="@+id/text_view_bg_target"
+        />
+    <TextView
+        style="@style/text_view"
+        android:id="@+id/text_view_bg_correctabove"
+        android:text="@string/text_view_bg_correctabove"
+        app:layout_constraintLeft_toRightOf="@+id/text_edit_bg_target"
+        app:layout_constraintTop_toTopOf="@+id/text_edit_bg_target"
+        app:layout_constraintBottom_toBottomOf="@+id/text_edit_bg_target"
+        />
+    <EditText
+        style="@style/edit_text_number"
+        android:id="@+id/text_edit_bg_correctabove"
+        android:text="@string/text_edit_bg_correctabove"
+        app:layout_constraintLeft_toRightOf="@+id/text_view_bg_correctabove"
+        app:layout_constraintTop_toTopOf="@+id/text_view_bg_correctabove"
+        app:layout_constraintBottom_toBottomOf="@+id/text_view_bg_correctabove"
+        />
+
+    <TextView
+        style="@style/text_view"
+        android:id="@+id/text_view_bg_current"
+        android:text="@string/text_view_bg_current"
+        app:layout_constraintLeft_toLeftOf="@+id/text_view_bg_target"
+        app:layout_constraintTop_toBottomOf="@+id/text_view_bg_target"
+        />
+    <EditText
+        style="@style/edit_text_number"
+        android:id="@+id/text_edit_bg_current"
+        android:text="@string/text_edit_bg_current"
+        app:layout_constraintLeft_toRightOf="@+id/text_view_bg_current"
+        app:layout_constraintTop_toTopOf="@+id/text_view_bg_current"
+        app:layout_constraintBottom_toBottomOf="@+id/text_view_bg_current"
+        />
+    <TextView
+        style="@style/text_view"
+        android:id="@+id/text_view_correction_factor"
+        android:text="@string/text_view_correction_factor"
+        app:layout_constraintLeft_toRightOf="@+id/text_edit_bg_current"
+        app:layout_constraintTop_toTopOf="@+id/text_edit_bg_current"
+        app:layout_constraintBottom_toBottomOf="@+id/text_edit_bg_current"
+        />
+    <EditText
+        style="@style/edit_text_number"
+        android:id="@+id/text_edit_correction_factor"
+        android:text="@string/text_edit_correction_factor"
+        app:layout_constraintLeft_toRightOf="@+id/text_view_correction_factor"
+        app:layout_constraintTop_toTopOf="@+id/text_view_correction_factor"
+        app:layout_constraintBottom_toBottomOf="@+id/text_view_correction_factor"
+        />
+
+    <!-- ===========================================================================================
+    Correction Bolus: IOB Adjustment
+    ============================================================================================ -->
+
+    <TextView
+        style="@style/text_header"
+        android:id="@+id/text_header_iob_adjustment"
+        android:text="@string/text_header_iob_adjustment"
+        app:layout_constraintTop_toBottomOf="@+id/text_edit_bg_current"
+        />
+
+    <TextView
+        style="@style/text_view"
+        android:id="@+id/text_view_meal_iob"
+        android:text="@string/text_view_meal_iob"
+        app:layout_constraintLeft_toLeftOf="@+id/text_header_iob_adjustment"
+        app:layout_constraintTop_toBottomOf="@+id/text_header_iob_adjustment"
+        />
+    <EditText
+        style="@style/edit_text_decimal"
+        android:id="@+id/text_edit_meal_iob"
+        android:text="@string/text_edit_meal_iob"
+        app:layout_constraintLeft_toRightOf="@+id/text_view_meal_iob"
+        app:layout_constraintTop_toTopOf="@+id/text_view_meal_iob"
+        app:layout_constraintBottom_toBottomOf="@+id/text_view_meal_iob"
+        />
+    <TextView
+        style="@style/text_view"
+        android:id="@+id/text_view_correction_iob"
+        android:text="@string/text_view_correction_iob"
+        app:layout_constraintLeft_toRightOf="@+id/text_edit_meal_iob"
+        app:layout_constraintTop_toTopOf="@+id/text_edit_meal_iob"
+        app:layout_constraintBottom_toBottomOf="@+id/text_edit_meal_iob"
+        />
+    <EditText
+        style="@style/edit_text_decimal"
+        android:id="@+id/text_edit_correction_iob"
+        android:text="@string/text_edit_correction_iob"
+        app:layout_constraintLeft_toRightOf="@+id/text_view_correction_iob"
+        app:layout_constraintTop_toTopOf="@+id/text_view_correction_iob"
+        app:layout_constraintBottom_toBottomOf="@+id/text_view_correction_iob"
+        />
+
+    <!-- ===========================================================================================
+    Meal Bolus
+    ============================================================================================ -->
+
+    <TextView
+        style="@style/text_header"
+        android:id="@+id/text_header_meal_bolus"
+        android:text="@string/text_header_meal_bolus"
+        app:layout_constraintTop_toBottomOf="@+id/text_view_correction_iob"
+        />
+
+    <TextView
+        style="@style/text_view"
+        android:id="@+id/text_view_meal_carbs"
+        android:text="@string/text_view_meal_carbs"
+        app:layout_constraintLeft_toLeftOf="@+id/text_header_meal_bolus"
+        app:layout_constraintTop_toBottomOf="@+id/text_header_meal_bolus"
+        />
+    <EditText
+        style="@style/edit_text_number"
+        android:id="@+id/text_edit_meal_carbs"
+        android:text="@string/text_edit_meal_carbs"
+        app:layout_constraintLeft_toRightOf="@+id/text_view_meal_carbs"
+        app:layout_constraintTop_toTopOf="@+id/text_view_meal_carbs"
+        app:layout_constraintBottom_toBottomOf="@+id/text_view_meal_carbs"
+        />
+    <TextView
+        style="@style/text_view"
+        android:id="@+id/text_view_meal_ratio"
+        android:text="@string/text_view_meal_ratio"
+        app:layout_constraintLeft_toRightOf="@+id/text_edit_meal_carbs"
+        app:layout_constraintTop_toTopOf="@+id/text_edit_meal_carbs"
+        app:layout_constraintBottom_toBottomOf="@+id/text_edit_meal_carbs"
+        />
+    <EditText
+        style="@style/edit_text_number"
+        android:id="@+id/text_edit_meal_ratio"
+        android:text="@string/text_edit_meal_ratio"
+        app:layout_constraintLeft_toRightOf="@+id/text_view_meal_ratio"
+        app:layout_constraintTop_toTopOf="@+id/text_view_meal_ratio"
+        app:layout_constraintBottom_toBottomOf="@+id/text_view_meal_ratio"
+        />
+
+    <!-- ===========================================================================================
+    Result
+    ============================================================================================ -->
+
+    <View
+        style="@style/horizontal_line"
+        android:id="@+id/line_1"
+        app:layout_constraintTop_toBottomOf="@+id/text_edit_meal_ratio"
+        />
+    <TextView
+        style="@style/text_result"
+        android:id="@+id/text_view_result"
+        android:text="@string/text_view_result"
+        app:layout_constraintTop_toBottomOf="@+id/line_1"
+        />
+    <Button
+        style="@style/button"
+        android:id="@+id/button_reverse_correction"
+        android:text="@string/text_button_reverse_correction"
+        app:layout_constraintLeft_toRightOf="@+id/text_view_result"
+        app:layout_constraintTop_toTopOf="@+id/text_view_result"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:gravity="center"
+        android:layout_margin="8dp"
+        app:layout_constraintVertical_bias="0.5"
+        app:layout_constraintHorizontal_bias="1.0"/>
+</android.support.constraint.ConstraintLayout>
