@@ -77,3 +77,4 @@ This document will show you how to:
 * Tutorials:
 
     * [README.md: preview of the readme.md](http://dillinger.io/)
+    * [JsonReader](https://developer.android.com/reference/android/util/JsonReader.html)

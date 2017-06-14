@@ -10,9 +10,9 @@
 
     <string name="text_header_correction_bolus">Correction Bolus</string>
     <string name="text_view_bg_target">target BG: </string>
-    <string name="edit_text_bg_target">110</string>
+    <string name="edit_text_bg_target">120</string>
     <string name="text_view_bg_correctabove">correct above BG: </string>
-    <string name="edit_text_bg_correctabove">115</string>
+    <string name="edit_text_bg_correctabove">160</string>
     <string name="text_view_bg_current">current BG: </string>
     <string name="edit_text_bg_current">90</string>
     <string name="text_view_correction_factor">correction factor: </string>

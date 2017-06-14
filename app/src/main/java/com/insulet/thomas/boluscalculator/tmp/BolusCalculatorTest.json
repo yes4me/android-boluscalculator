@@ -1,0 +1,45 @@
+{
+  "title":"bolus calculator data",
+  "data":[
+    {
+      "INPUT": {
+        "bg_calc_min": 70,
+        "bg_calc_max": 600,
+        "bg_target": 120,
+        "bg_correctabove": 160,
+        "bg_current": -1,
+        "correction_factor": 50,
+        "meal_iob": 0.6,
+        "correction_iob": 0.6,
+        "meal_carbs": 47,
+        "meal_ratio": 15,
+        "reverse_correction": "false"
+      },
+      "RESULT": {
+        "correction_bolus": 0.0,
+        "meal_bolus": 3.1,
+        "total_bolus": 3.1
+      }
+    },
+    {
+      "INPUT": {
+        "bg_calc_min": 70,
+        "bg_calc_max": 600,
+        "bg_target": 120,
+        "bg_correctabove": 160,
+        "bg_current": 170,
+        "correction_factor": 50,
+        "meal_iob": 0.6,
+        "correction_iob": 0.6,
+        "meal_carbs": 47,
+        "meal_ratio": 15,
+        "reverse_correction": "false"
+      },
+      "RESULT": {
+        "correction_bolus": 0.0,
+        "meal_bolus": 2.9,
+        "total_bolus": 2.9
+      }
+    }
+  ]
+}
