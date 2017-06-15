@@ -15,7 +15,7 @@ import java.util.List;
  * Created by thomas on 6/14/2017.
  */
 
-public abstract class MyJson {
+public abstract class JsonBase {
     public List<JsonBolus> readJsonStream(String filename) throws IOException {
         InputStream inputStream = InstrumentationRegistry.getContext().getAssets().open(filename);
         return readJsonStream(inputStream);

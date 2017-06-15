@@ -17,6 +17,8 @@ public class BolusCalculatorUnitTest {
     @Test
     public void bolusCalculator() throws Exception {
         /*
+        TO DO
+
         double bgCalc_min = 70;
         double bgCalc_max = 600;
         double durationBolusCalculatorOn	= 4;	// in hours

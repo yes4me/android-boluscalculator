@@ -1,11 +1,8 @@
 package com.insulet.thomas.boluscalculator.utils;
 
-import android.support.test.InstrumentationRegistry;
 import android.util.JsonReader;
 
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,7 +10,7 @@ import java.util.List;
  * Created by thomas on 6/14/2017.
  */
 
-public class JsonParser extends MyJson {
+public class JsonBolusParser extends JsonBase {
     public List<JsonBolus> readMessagesArray(JsonReader reader) throws IOException {
         List<JsonBolus> messages = new ArrayList<JsonBolus>();
 

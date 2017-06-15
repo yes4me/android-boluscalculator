@@ -5,6 +5,7 @@ import android.support.test.espresso.action.ViewActions;
 import android.view.KeyEvent;
 
 import static android.support.test.espresso.action.ViewActions.clearText;
+import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.action.ViewActions.closeSoftKeyboard;
 import static android.support.test.espresso.action.ViewActions.pressImeActionButton;
 import static android.support.test.espresso.action.ViewActions.typeText;
@@ -14,6 +15,14 @@ import static android.support.test.espresso.action.ViewActions.typeText;
  */
 
 public class MyEspresso {
+    public static void enterTextFromKeyboard(ViewInteraction viewInteraction, int number) {
+        String text = String.valueOf(number);
+        enterTextFromKeyboard(viewInteraction, text);
+    }
+    public static void enterTextFromKeyboard(ViewInteraction viewInteraction, double number) {
+        String text = String.valueOf(number);
+        enterTextFromKeyboard(viewInteraction, text);
+    }
     public static void enterTextFromKeyboard(ViewInteraction viewInteraction, String text) {
         viewInteraction.perform( clearText() );
         viewInteraction.perform( typeText(text) );
@@ -21,5 +30,9 @@ public class MyEspresso {
         //viewInteraction.perform(replaceText(String.valueOf("Hello")), closeSoftKeyboard());
         // viewInteraction.perform(ViewActions.pressKey( KeyEvent.KEYCODE_ENTER ));
         viewInteraction.perform( closeSoftKeyboard() );
+    }
+
+    public static void clickButton(ViewInteraction viewInteraction) {
+        viewInteraction.perform(click());
     }
 }
