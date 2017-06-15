@@ -6,6 +6,7 @@ import android.view.KeyEvent;
 
 import static android.support.test.espresso.action.ViewActions.clearText;
 import static android.support.test.espresso.action.ViewActions.closeSoftKeyboard;
+import static android.support.test.espresso.action.ViewActions.pressImeActionButton;
 import static android.support.test.espresso.action.ViewActions.typeText;
 
 /**
@@ -13,10 +14,11 @@ import static android.support.test.espresso.action.ViewActions.typeText;
  */
 
 public class MyEspresso {
-    public static void enterText(ViewInteraction viewInteraction, String text) {
-        //  viewInteraction.perform(clearText());
+    public static void enterTextFromKeyboard(ViewInteraction viewInteraction, String text) {
+        viewInteraction.perform( clearText() );
         viewInteraction.perform( typeText(text) );
-        viewInteraction.perform(ViewActions.pressKey( KeyEvent.KEYCODE_ENTER ));
-        viewInteraction.perform(closeSoftKeyboard());
+        viewInteraction.perform( pressImeActionButton() );
+        // viewInteraction.perform(ViewActions.pressKey( KeyEvent.KEYCODE_ENTER ));
+        viewInteraction.perform( closeSoftKeyboard() );
     }
 }

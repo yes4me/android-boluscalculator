@@ -1,17 +1,9 @@
 package com.insulet.thomas.boluscalculator;
 
 
-import android.content.Context;
-import android.content.res.AssetManager;
-import android.support.test.InstrumentationRegistry;
 import android.support.test.espresso.ViewInteraction;
-import android.support.test.espresso.action.KeyEventAction;
-import android.support.test.espresso.action.ViewActions;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
-import android.util.JsonReader;
-import android.util.Log;
-import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
@@ -26,34 +18,24 @@ import com.insulet.thomas.boluscalculator.utils.MyJson;
 import org.hamcrest.Description;
 import org.hamcrest.Matcher;
 import org.hamcrest.TypeSafeMatcher;
-import org.json.simple.parser.JSONParser;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import java.io.File;
-import java.io.FileReader;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.util.List;
 
 import static android.support.test.espresso.Espresso.onView;
-import static android.support.test.espresso.action.ViewActions.clearText;
 import static android.support.test.espresso.action.ViewActions.click;
-import static android.support.test.espresso.action.ViewActions.closeSoftKeyboard;
-import static android.support.test.espresso.action.ViewActions.replaceText;
-import static android.support.test.espresso.action.ViewActions.typeText;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
-import static java.security.AccessController.getContext;
 import static org.hamcrest.Matchers.allOf;
-import static org.junit.Assert.assertEquals;
 
 @RunWith(AndroidJUnit4.class)
 public class BolusCalculatorTest {
     private static final String TAG = BolusCalculatorTest.class.getSimpleName();
     public final String FILENAME = "BolusCalculatorTest.json";
+    public static boolean reverse_correction_status = false;
 
     ViewInteraction edit_text_bg_calc_min       = onView(allOf(withId(R.id.edit_text_bg_calc_min)));
     ViewInteraction edit_text_bg_calc_max       = onView(allOf(withId(R.id.edit_text_bg_calc_max)));
@@ -67,7 +49,6 @@ public class BolusCalculatorTest {
     ViewInteraction edit_text_meal_ratio        = onView(allOf(withId(R.id.edit_text_meal_ratio)));
     ViewInteraction button_reverse_correction   = onView(allOf(withId(R.id.button_reverse_correction)));
     ViewInteraction text_view_result            = onView(allOf(withId(R.id.text_view_result)));
-    static boolean reverse_correction_status = false;
 
     @Rule
     public ActivityTestRule<MainActivity> mActivityTestRule = new ActivityTestRule<>(MainActivity.class);
@@ -76,14 +57,14 @@ public class BolusCalculatorTest {
     public void mainActivityTest() {
         int bg_calc_min = 0;
         int bg_calc_max = 0;
-        int bg_target = 0;
+        int bg_target   = 0;
         int bg_correctabove = 0;
-        int bg_current = 0;
+        int bg_current  = 0;
         int correction_factor = 0;
         double meal_iob = 0.0;
         double correction_iob = 0.0;
-        int meal_carbs = 0;
-        int meal_ratio = 0;
+        int meal_carbs  = 0;
+        int meal_ratio  = 0;
         boolean reverse_correction = false;
 
         double correction_bolus = 0.0;
@@ -97,7 +78,7 @@ public class BolusCalculatorTest {
             for (JsonBolus bolusData : bolusDataList) {
                 // Input
                 JsonBolusInput jsonBolusInput = bolusData.getInput();
-                bg_calc_min = jsonBolusInput.getBg_calc_min();
+                bg_calc_min     = jsonBolusInput.getBg_calc_min();
                 bg_calc_max     = jsonBolusInput.getBg_calc_max();
                 bg_target       = jsonBolusInput.getBg_target();
                 bg_correctabove = jsonBolusInput.getBg_correctabove();
@@ -120,16 +101,16 @@ public class BolusCalculatorTest {
 //                edit_text_correction_iob.perform(replaceText(String.valueOf(correction_iob)), closeSoftKeyboard());
 //                edit_text_meal_carbs.perform(replaceText(String.valueOf(meal_carbs)), closeSoftKeyboard());
 //                edit_text_meal_ratio.perform(replaceText(String.valueOf(meal_ratio)), closeSoftKeyboard());
-                MyEspresso.enterText(edit_text_bg_calc_min, String.valueOf(bg_calc_min));
-                MyEspresso.enterText(edit_text_bg_calc_max, String.valueOf(bg_calc_max));
-                MyEspresso.enterText(edit_text_bg_target, String.valueOf(bg_target));
-                MyEspresso.enterText(edit_text_bg_correctabove, String.valueOf(bg_correctabove));
-                MyEspresso.enterText(edit_text_bg_current, String.valueOf(bg_current));
-                MyEspresso.enterText(edit_text_correction_factor, String.valueOf(correction_factor));
-                MyEspresso.enterText(edit_text_meal_iob, String.valueOf(meal_iob));
-                MyEspresso.enterText(edit_text_correction_iob, String.valueOf(correction_iob));
-                MyEspresso.enterText(edit_text_meal_carbs, String.valueOf(meal_carbs));
-                MyEspresso.enterText(edit_text_meal_ratio, String.valueOf(meal_ratio));
+                MyEspresso.enterTextFromKeyboard(edit_text_bg_calc_min, String.valueOf(bg_calc_min));
+                MyEspresso.enterTextFromKeyboard(edit_text_bg_calc_max, String.valueOf(bg_calc_max));
+                MyEspresso.enterTextFromKeyboard(edit_text_bg_target, String.valueOf(bg_target));
+                MyEspresso.enterTextFromKeyboard(edit_text_bg_correctabove, String.valueOf(bg_correctabove));
+                MyEspresso.enterTextFromKeyboard(edit_text_bg_current, String.valueOf(bg_current));
+                MyEspresso.enterTextFromKeyboard(edit_text_correction_factor, String.valueOf(correction_factor));
+                MyEspresso.enterTextFromKeyboard(edit_text_meal_iob, String.valueOf(meal_iob));
+                MyEspresso.enterTextFromKeyboard(edit_text_correction_iob, String.valueOf(correction_iob));
+                MyEspresso.enterTextFromKeyboard(edit_text_meal_carbs, String.valueOf(meal_carbs));
+                MyEspresso.enterTextFromKeyboard(edit_text_meal_ratio, String.valueOf(meal_ratio));
 
                 if (reverse_correction_status != reverse_correction) {
                     button_reverse_correction.perform(click());

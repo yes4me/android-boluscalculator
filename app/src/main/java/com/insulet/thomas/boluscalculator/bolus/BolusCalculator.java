@@ -11,6 +11,8 @@ import com.insulet.thomas.boluscalculator.util.MyString;
 
 public class BolusCalculator {
     private static final String TAG = BolusCalculator.class.getSimpleName();
+
+    // Variables to hold the inputs
     private double bgCalc_min = 70;
     private double bgCalc_max = 600;
     private double durationBolusCalculatorOn	= 4;	// in hours
@@ -18,7 +20,7 @@ public class BolusCalculator {
 
     private boolean reverseCorrection = false;
     private double bgTarget			= 110;  // TRUE FACT TO ALWAYS CHECK: bgTarget < bgCorrectAbove
-    private double bgCorrectAbove	= 115;	// bgCurrent needs to be above the bgCorrectAbove to be corrected
+    private double bgCorrectAbove	= 160;	// bgCurrent needs to be above the bgCorrectAbove to be corrected
     private double bgCurrent		= 90;  // use negative value when it is not recorded
     private double correctionFactor = 50;
     private double adjustmentMeal_IOB = 0;
@@ -26,7 +28,6 @@ public class BolusCalculator {
 
     private double mealCarbs		= 47;		// in g
     private double meal_ic_ratio	= 15;		// in g/U
-
 
     // Variables to hold the result
     private double correctionBolus	= 0;
@@ -204,6 +205,7 @@ public class BolusCalculator {
 
 
         // Total Bolus calculation
+        double adjustmentCorrection_IOB_transfer = adjustmentCorrection_IOB;
         if (bgCorrectAbove < bgCurrent) {
             correctionBolus = (bgCurrent - bgTarget) / correctionFactor;
             correctionBolus = MyNumber.round(correctionBolus - adjustmentMeal_IOB, 0.05);
@@ -213,7 +215,7 @@ public class BolusCalculator {
 
             correctionBolus = MyNumber.round(correctionBolus - adjustmentCorrection_IOB, 0.05);
             if (correctionBolus < 0) {
-                adjustmentCorrection_IOB = Math.abs(correctionBolus);
+                adjustmentCorrection_IOB_transfer = Math.abs(correctionBolus);
                 correctionBolus = 0;
             }
         } else if (bgTarget < bgCurrent) {
@@ -226,7 +228,7 @@ public class BolusCalculator {
             }
         }
 
-        mealBolus = MyNumber.round(mealCarbs / meal_ic_ratio - adjustmentCorrection_IOB, 0.05);
+        mealBolus = MyNumber.round(mealCarbs / meal_ic_ratio - adjustmentCorrection_IOB_transfer, 0.05);
         if (mealBolus < 0)
             mealBolus = 0;
     }

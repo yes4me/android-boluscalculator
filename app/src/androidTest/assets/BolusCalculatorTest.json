@@ -89,7 +89,7 @@
       "bg_calc_max": 600,
       "bg_target": 120,
       "bg_correctabove": 160,
-      "bg_current": 10,
+      "bg_current": 69,
       "correction_factor": 50,
       "meal_iob": 0.6,
       "correction_iob": 0.6,
@@ -110,7 +110,7 @@
       "bg_calc_max": 600,
       "bg_target": 120,
       "bg_correctabove": 160,
-      "bg_current": 10,
+      "bg_current": 69,
       "correction_factor": 50,
       "meal_iob": 0.6,
       "correction_iob": 0.6,
@@ -123,6 +123,216 @@
       "meal_bolus": 3.1,
       "total_bolus": 3.1,
       "text_displayed":"Too LOW BG! Go to hospital!"
+    }
+  },
+  {
+    "INPUT": {
+      "bg_calc_min": 70,
+      "bg_calc_max": 600,
+      "bg_target": 120,
+      "bg_correctabove": 160,
+      "bg_current": 170,
+      "correction_factor": 50,
+      "meal_iob": 0.6,
+      "correction_iob": 0.6,
+      "meal_carbs": 47,
+      "meal_ratio": 15,
+      "reverse_correction": false
+    },
+    "RESULT": {
+      "correction_bolus": 0.0,
+      "meal_bolus": 2.9,
+      "total_bolus": 2.9,
+      "text_displayed":"correction bolus = 0\nmeal bolus = 2.9\nTOTAL BOLUS = 2.9"
+    }
+  },
+  {
+    "INPUT": {
+      "bg_calc_min": 70,
+      "bg_calc_max": 600,
+      "bg_target": 120,
+      "bg_correctabove": 160,
+      "bg_current": 170,
+      "correction_factor": 50,
+      "meal_iob": 0.6,
+      "correction_iob": 0.6,
+      "meal_carbs": 47,
+      "meal_ratio": 15,
+      "reverse_correction": true
+    },
+    "RESULT": {
+      "correction_bolus": 0.0,
+      "meal_bolus": 2.9,
+      "total_bolus": 2.9,
+      "text_displayed":"correction bolus = 0\nmeal bolus = 2.9\nTOTAL BOLUS = 2.9"
+    }
+  },
+  {
+    "INPUT": {
+      "bg_calc_min": 70,
+      "bg_calc_max": 600,
+      "bg_target": 120,
+      "bg_correctabove": 160,
+      "bg_current": 140,
+      "correction_factor": 50,
+      "meal_iob": 0.6,
+      "correction_iob": 0.6,
+      "meal_carbs": 47,
+      "meal_ratio": 15,
+      "reverse_correction": false
+    },
+    "RESULT": {
+      "correction_bolus": 0.0,
+      "meal_bolus": 2.5,
+      "total_bolus": 2.5,
+      "text_displayed":"correction bolus = 0\nmeal bolus = 2.5\nTOTAL BOLUS = 2.5"
+    }
+  },
+  {
+    "INPUT": {
+      "bg_calc_min": 70,
+      "bg_calc_max": 600,
+      "bg_target": 120,
+      "bg_correctabove": 160,
+      "bg_current": 140,
+      "correction_factor": 50,
+      "meal_iob": 0.6,
+      "correction_iob": 0.6,
+      "meal_carbs": 47,
+      "meal_ratio": 15,
+      "reverse_correction": true
+    },
+    "RESULT": {
+      "correction_bolus": 0.0,
+      "meal_bolus": 2.5,
+      "total_bolus": 2.5,
+      "text_displayed":"correction bolus = 0\nmeal bolus = 2.5\nTOTAL BOLUS = 2.5"
+    }
+  },
+  {
+    "INPUT": {
+      "bg_calc_min": 70,
+      "bg_calc_max": 600,
+      "bg_target": 120,
+      "bg_correctabove": 160,
+      "bg_current": 90,
+      "correction_factor": 50,
+      "meal_iob": 0.6,
+      "correction_iob": 0.6,
+      "meal_carbs": 47,
+      "meal_ratio": 15,
+      "reverse_correction": false
+    },
+    "RESULT": {
+      "correction_bolus": 0.0,
+      "meal_bolus": 2.5,
+      "total_bolus": 2.5,
+      "text_displayed":"correction bolus = 0\nmeal bolus = 2.5\nTOTAL BOLUS = 2.5"
+    }
+  },
+  {
+    "INPUT": {
+      "bg_calc_min": 70,
+      "bg_calc_max": 600,
+      "bg_target": 120,
+      "bg_correctabove": 160,
+      "bg_current": 90,
+      "correction_factor": 50,
+      "meal_iob": 0.6,
+      "correction_iob": 0.6,
+      "meal_carbs": 47,
+      "meal_ratio": 15,
+      "reverse_correction": true
+    },
+    "RESULT": {
+      "correction_bolus": -0.6,
+      "meal_bolus": 2.5,
+      "total_bolus": 1.9,
+      "text_displayed":"correction bolus = -0.6\nmeal bolus = 2.5\nTOTAL BOLUS = 1.9"
+    }
+  },
+  {
+    "INPUT": {
+      "bg_calc_min": 70,
+      "bg_calc_max": 600,
+      "bg_target": 120,
+      "bg_correctabove": 160,
+      "bg_current": 100,
+      "correction_factor": 50,
+      "meal_iob": 0.6,
+      "correction_iob": 0.6,
+      "meal_carbs": 0,
+      "meal_ratio": 15,
+      "reverse_correction": false
+    },
+    "RESULT": {
+      "correction_bolus": -0.4,
+      "meal_bolus": 0.0,
+      "total_bolus": 0.0,
+      "text_displayed":"correction bolus = 0\nmeal bolus = 0\nTOTAL BOLUS = 0"
+    }
+  },
+  {
+    "INPUT": {
+      "bg_calc_min": 70,
+      "bg_calc_max": 600,
+      "bg_target": 120,
+      "bg_correctabove": 160,
+      "bg_current": 100,
+      "correction_factor": 50,
+      "meal_iob": 0.6,
+      "correction_iob": 0.6,
+      "meal_carbs": 0,
+      "meal_ratio": 15,
+      "reverse_correction": true
+    },
+    "RESULT": {
+      "correction_bolus": -0.4,
+      "meal_bolus": 0.0,
+      "total_bolus": 0.0,
+      "text_displayed":"correction bolus = -0.4\nmeal bolus = 0\nTOTAL BOLUS = 0"
+    }
+  },
+  {
+    "INPUT": {
+      "bg_calc_min": 70,
+      "bg_calc_max": 600,
+      "bg_target": 120,
+      "bg_correctabove": 160,
+      "bg_current": 170,
+      "correction_factor": 50,
+      "meal_iob": 1.8,
+      "correction_iob": 1.8,
+      "meal_carbs": 47,
+      "meal_ratio": 15,
+      "reverse_correction": false
+    },
+    "RESULT": {
+      "correction_bolus": 0,
+      "meal_bolus": 1.3,
+      "total_bolus": 1.3,
+      "text_displayed":"correction bolus = 0\nmeal bolus = 1.3\nTOTAL BOLUS = 1.3"
+    }
+  },
+  {
+    "INPUT": {
+      "bg_calc_min": 70,
+      "bg_calc_max": 600,
+      "bg_target": 120,
+      "bg_correctabove": 160,
+      "bg_current": 170,
+      "correction_factor": 50,
+      "meal_iob": 1.8,
+      "correction_iob": 1.8,
+      "meal_carbs": 47,
+      "meal_ratio": 15,
+      "reverse_correction": true
+    },
+    "RESULT": {
+      "correction_bolus": 0,
+      "meal_bolus": 1.3,
+      "total_bolus": 1.3,
+      "text_displayed":"correction bolus = 0\nmeal bolus = 1.3\nTOTAL BOLUS = 1.3"
     }
   }
 ]
