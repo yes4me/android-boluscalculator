@@ -18,6 +18,7 @@ public class MyEspresso {
         viewInteraction.perform( clearText() );
         viewInteraction.perform( typeText(text) );
         viewInteraction.perform( pressImeActionButton() );
+        //viewInteraction.perform(replaceText(String.valueOf("Hello")), closeSoftKeyboard());
         // viewInteraction.perform(ViewActions.pressKey( KeyEvent.KEYCODE_ENTER ));
         viewInteraction.perform( closeSoftKeyboard() );
     }

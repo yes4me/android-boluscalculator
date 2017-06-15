@@ -55,21 +55,21 @@ public class BolusCalculatorTest {
 
     @Test
     public void mainActivityTest() {
-        int bg_calc_min = 0;
-        int bg_calc_max = 0;
-        int bg_target   = 0;
-        int bg_correctabove = 0;
-        int bg_current  = 0;
-        int correction_factor = 0;
-        double meal_iob = 0.0;
-        double correction_iob = 0.0;
-        int meal_carbs  = 0;
-        int meal_ratio  = 0;
+        int bg_calc_min = -2;
+        int bg_calc_max = -2;
+        int bg_target   = -2;
+        int bg_correctabove = -2;
+        int bg_current  = -2;
+        int correction_factor = -2;
+        double meal_iob = -1.0;
+        double correction_iob = -1.0;
+        int meal_carbs  = -2;
+        int meal_ratio  = -2;
         boolean reverse_correction = false;
 
-        double correction_bolus = 0.0;
-        double meal_bolus       = 0.0;
-        double total_bolus      = 0.0;
+        double correction_bolus = -2.0;
+        double meal_bolus       = -2.0;
+        double total_bolus      = -2.0;
         String text_displayed   = "";
 
         try {
@@ -78,39 +78,18 @@ public class BolusCalculatorTest {
             for (JsonBolus bolusData : bolusDataList) {
                 // Input
                 JsonBolusInput jsonBolusInput = bolusData.getInput();
-                bg_calc_min     = jsonBolusInput.getBg_calc_min();
-                bg_calc_max     = jsonBolusInput.getBg_calc_max();
-                bg_target       = jsonBolusInput.getBg_target();
-                bg_correctabove = jsonBolusInput.getBg_correctabove();
+                bg_calc_min     = updateField(edit_text_bg_calc_min, bg_calc_min, jsonBolusInput.getBg_calc_min());
+                bg_calc_max     = updateField(edit_text_bg_calc_max, bg_calc_max, jsonBolusInput.getBg_calc_max());
+                bg_target       = updateField(edit_text_bg_target, bg_target, jsonBolusInput.getBg_target());
+                bg_correctabove = updateField(edit_text_bg_correctabove, bg_correctabove, jsonBolusInput.getBg_correctabove());
+                bg_current      = updateField(edit_text_bg_current, bg_current, jsonBolusInput.getBg_current());
+                correction_factor = updateField(edit_text_correction_factor, correction_factor, jsonBolusInput.getCorrection_factor());
+                meal_iob        = updateField(edit_text_meal_iob, meal_iob, jsonBolusInput.getMeal_iob());
+                correction_iob  = updateField(edit_text_correction_iob, correction_iob, jsonBolusInput.getCorrection_iob());
+                meal_carbs      = updateField(edit_text_meal_carbs, meal_carbs, jsonBolusInput.getMeal_carbs());
+                meal_ratio      = updateField(edit_text_meal_ratio, meal_ratio, jsonBolusInput.getMeal_ratio());
 
-                bg_current      = jsonBolusInput.getBg_current();
-                correction_factor = jsonBolusInput.getCorrection_factor();
-                meal_iob        = jsonBolusInput.getMeal_iob();
-                correction_iob  = jsonBolusInput.getCorrection_iob();
-                meal_carbs      = jsonBolusInput.getMeal_carbs();
-                meal_ratio      = jsonBolusInput.getMeal_ratio();
                 reverse_correction = jsonBolusInput.isReverse_correction();
-
-//                edit_text_bg_calc_min.perform(replaceText(String.valueOf(bg_calc_min)), closeSoftKeyboard());
-//                edit_text_bg_calc_max.perform(replaceText(String.valueOf(bg_calc_max)), closeSoftKeyboard());
-//                edit_text_bg_target.perform(replaceText(String.valueOf(bg_target)), closeSoftKeyboard());
-//                edit_text_bg_correctabove.perform(replaceText(String.valueOf(bg_correctabove)), closeSoftKeyboard());
-//                edit_text_bg_current.perform(replaceText(String.valueOf(bg_current)), closeSoftKeyboard());
-//                edit_text_correction_factor.perform(replaceText(String.valueOf(correction_factor)), closeSoftKeyboard());
-//                edit_text_meal_iob.perform(replaceText(String.valueOf(meal_iob)), closeSoftKeyboard());
-//                edit_text_correction_iob.perform(replaceText(String.valueOf(correction_iob)), closeSoftKeyboard());
-//                edit_text_meal_carbs.perform(replaceText(String.valueOf(meal_carbs)), closeSoftKeyboard());
-//                edit_text_meal_ratio.perform(replaceText(String.valueOf(meal_ratio)), closeSoftKeyboard());
-                MyEspresso.enterTextFromKeyboard(edit_text_bg_calc_min, String.valueOf(bg_calc_min));
-                MyEspresso.enterTextFromKeyboard(edit_text_bg_calc_max, String.valueOf(bg_calc_max));
-                MyEspresso.enterTextFromKeyboard(edit_text_bg_target, String.valueOf(bg_target));
-                MyEspresso.enterTextFromKeyboard(edit_text_bg_correctabove, String.valueOf(bg_correctabove));
-                MyEspresso.enterTextFromKeyboard(edit_text_bg_current, String.valueOf(bg_current));
-                MyEspresso.enterTextFromKeyboard(edit_text_correction_factor, String.valueOf(correction_factor));
-                MyEspresso.enterTextFromKeyboard(edit_text_meal_iob, String.valueOf(meal_iob));
-                MyEspresso.enterTextFromKeyboard(edit_text_correction_iob, String.valueOf(correction_iob));
-                MyEspresso.enterTextFromKeyboard(edit_text_meal_carbs, String.valueOf(meal_carbs));
-                MyEspresso.enterTextFromKeyboard(edit_text_meal_ratio, String.valueOf(meal_ratio));
 
                 if (reverse_correction_status != reverse_correction) {
                     button_reverse_correction.perform(click());
@@ -131,6 +110,20 @@ public class BolusCalculatorTest {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    // Update the edit view only when the value changes from oldValue to newValue
+    private int updateField(ViewInteraction viewInteraction, int oldValue, int newValue) {
+        if (oldValue != newValue) {
+            MyEspresso.enterTextFromKeyboard(viewInteraction, String.valueOf(newValue));
+        }
+        return newValue;
+    }
+    private double updateField(ViewInteraction viewInteraction, double oldValue, double newValue) {
+        if (oldValue != newValue) {
+            MyEspresso.enterTextFromKeyboard(viewInteraction, String.valueOf(newValue));
+        }
+        return newValue;
     }
 
     private static Matcher<View> childAtPosition(
