@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity implements EditText.OnEditor
     private static final String TAG = MainActivity.class.getSimpleName();
     private BolusCalculator bolusCalculator;
 
+    // Input values
     public EditText edit_text_bg_calc_min;
     public EditText edit_text_bg_calc_max;
     public EditText edit_text_bg_target;
@@ -30,8 +31,9 @@ public class MainActivity extends AppCompatActivity implements EditText.OnEditor
     public EditText edit_text_correction_iob;
     public EditText edit_text_meal_carbs;
     public EditText edit_text_meal_ratio;
-
     public Button button_reverse_correction;
+
+    // Result values
     public TextView text_view_result;
 
     @Override
@@ -45,8 +47,7 @@ public class MainActivity extends AppCompatActivity implements EditText.OnEditor
             //getSupportActionBar().setTitle("My custom toolbar!");
         }
 
-        bolusCalculator = new BolusCalculator();
-
+        // Input values
         edit_text_bg_calc_min   = (EditText) findViewById(R.id.edit_text_bg_calc_min);
         edit_text_bg_calc_max   = (EditText) findViewById(R.id.edit_text_bg_calc_max);
         edit_text_bg_target     = (EditText) findViewById(R.id.edit_text_bg_target);
@@ -73,13 +74,13 @@ public class MainActivity extends AppCompatActivity implements EditText.OnEditor
         edit_text_meal_carbs.setOnEditorActionListener(this);
         edit_text_meal_ratio.setOnEditorActionListener(this);
 
-
         button_reverse_correction = (Button)  findViewById(R.id.button_reverse_correction);
         button_reverse_correction.setOnClickListener(this);
-        //updateBackgroundReverseCorrection();
+        // updateBackgroundReverseCorrection();
         updateData();
 
         // Calculate the result
+        bolusCalculator = new BolusCalculator();
         bolusCalculator.updateResult();
         String result = bolusCalculator.getResult();
         text_view_result        = (TextView) findViewById(R.id.text_view_result);
@@ -186,5 +187,9 @@ public class MainActivity extends AppCompatActivity implements EditText.OnEditor
             button_reverse_correction.setBackgroundColor(Color.parseColor("#e63900"));
             button_reverse_correction.setText("Reverse\nCorrection OFF");
         }
+    }
+
+    public String getEdit_text_bg_calc_min() {
+        return edit_text_bg_calc_min.getText().toString();
     }
 }

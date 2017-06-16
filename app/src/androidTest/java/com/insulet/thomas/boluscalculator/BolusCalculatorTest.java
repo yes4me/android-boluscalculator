@@ -4,10 +4,12 @@ package com.insulet.thomas.boluscalculator;
 import android.support.test.espresso.ViewInteraction;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
 
+import com.insulet.thomas.boluscalculator.bolus.BolusCalculator;
 import com.insulet.thomas.boluscalculator.page_object.BolusCalculatorPage;
 import com.insulet.thomas.boluscalculator.utils.JsonBolus;
 import com.insulet.thomas.boluscalculator.utils.JsonBolusInput;

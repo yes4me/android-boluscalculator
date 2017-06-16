@@ -12,29 +12,30 @@ import com.insulet.thomas.boluscalculator.util.MyString;
 public class BolusCalculator {
     private static final String TAG = BolusCalculator.class.getSimpleName();
 
-    // Variables to hold the inputs
+    // Input values
     private double bgCalc_min = 70;
     private double bgCalc_max = 600;
     private double durationBolusCalculatorOn	= 4;	// in hours
     private double durationInsulinAction		= 4;	// in hours
-
-    private boolean reverseCorrection = false;
     private double bgTarget			= 110;  // TRUE FACT TO ALWAYS CHECK: bgTarget < bgCorrectAbove
     private double bgCorrectAbove	= 160;	// bgCurrent needs to be above the bgCorrectAbove to be corrected
-    private double bgCurrent		= 90;  // use negative value when it is not recorded
+    private double bgCurrent		= 90;   // use negative value when it is not recorded
     private double correctionFactor = 50;
-    private double adjustmentMeal_IOB = 0;
-    private double adjustmentCorrection_IOB = 0;
-
+    private double adjustmentMeal_IOB = 0;      // = meal IOB
+    private double adjustmentCorrection_IOB = 0;// = correction IOB
     private double mealCarbs		= 47;		// in g
     private double meal_ic_ratio	= 15;		// in g/U
+    private boolean reverseCorrection = false;
 
-    // Variables to hold the result
+    // Result values
     private double correctionBolus	= 0;
     private double mealBolus		= 0;
 
-    public BolusCalculator() {
-    }
+    /* =============================================================================================
+    CONSTRUCTOR
+    ============================================================================================= */
+
+    public BolusCalculator() {}
 
     /* =============================================================================================
     GETTER AND SETTERS

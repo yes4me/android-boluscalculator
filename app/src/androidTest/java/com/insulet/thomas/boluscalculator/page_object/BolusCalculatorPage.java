@@ -27,20 +27,23 @@ public class BolusCalculatorPage {
     private final ViewInteraction button_reverse_correction   = onView(allOf(withId(R.id.button_reverse_correction)));
     private final ViewInteraction text_view_result            = onView(allOf(withId(R.id.text_view_result)));
 
-    /// Input values
+    // Input values
     private Integer bg_calc_min = null;
     private Integer bg_calc_max = null;
     private Integer bg_target   = null;
     private Integer bg_correctabove = null;
     private Integer bg_current  = null;
     private Integer correction_factor = null;
-    private Double meal_iob = null;
+    private Double meal_iob     = null;
     private Double correction_iob = null;
     private Integer meal_carbs  = null;
     private Integer meal_ratio  = null;
     private boolean reverse_correction = false;
 
-    /// Result values
+    private double mealCarbs		= 47;		// in g
+    private double meal_ic_ratio	= 15;		// in g/U
+
+    // Result values
     private Double correction_bolus = null;
     private Double meal_bolus       = null;
     private Double total_bolus      = null;
