@@ -54,7 +54,13 @@ public class BolusCalculatorTest {
                 bolusCalculatorPage.setBg_calc_min( jsonBolusInput.getBg_calc_min() );
                 bolusCalculatorPage.setBg_calc_max( jsonBolusInput.getBg_calc_max() );
                 bolusCalculatorPage.setBg_target( jsonBolusInput.getBg_target() );
-                bolusCalculatorPage.setBg_correctabove( jsonBolusInput.getBg_correctabove() );
+
+                // If target BG ends up being higher than the current value for correctabove, it is impossible to set a value for target
+                boolean b = bolusCalculatorPage.setBg_correctabove( jsonBolusInput.getBg_correctabove() );
+                bolusCalculatorPage.setBg_target( jsonBolusInput.getBg_target() );
+                if (!b)
+                    bolusCalculatorPage.setBg_correctabove( jsonBolusInput.getBg_correctabove() );
+
                 bolusCalculatorPage.setBg_current( jsonBolusInput.getBg_current() );
                 bolusCalculatorPage.setCorrection_factor( jsonBolusInput.getCorrection_factor() );
                 bolusCalculatorPage.setMeal_iob( jsonBolusInput.getMeal_iob() );
@@ -71,10 +77,8 @@ public class BolusCalculatorTest {
                 String text_displayed      = jsonBolusResult.getText_displayed();
 
                 // Compare to the displayed result
-                Thread.sleep(100);
                 text_view_result.check(matches(withText(text_displayed)));
             }
-
         } catch (Exception e) {
             e.printStackTrace();
         }

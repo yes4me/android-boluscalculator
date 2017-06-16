@@ -46,8 +46,6 @@ public class BolusCalculatorPage {
     private Double total_bolus      = null;
     private String text_displayed   = "";
 
-    public boolean reverse_correction_status = false;
-
     public BolusCalculatorPage() {}
 
     /* =============================================================================================
@@ -58,116 +56,138 @@ public class BolusCalculatorPage {
         return bg_calc_min;
     }
 
-    public void setBg_calc_min(Integer bg_calc_min) {
+    public boolean setBg_calc_min(Integer bg_calc_min) {
         if ((this.bg_calc_min == null) || (this.bg_calc_min.intValue() != bg_calc_min.intValue())) {
             this.bg_calc_min = bg_calc_min;
             MyEspresso.enterTextFromKeyboard(edit_text_bg_calc_min, bg_calc_min);
+            return true;
         }
+        return false;
     }
 
     public int getBg_calc_max() {
         return bg_calc_max;
     }
 
-    public void setBg_calc_max(Integer bg_calc_max) {
+    public boolean setBg_calc_max(Integer bg_calc_max) {
         if ((this.bg_calc_max == null) || (this.bg_calc_max.intValue() != bg_calc_max.intValue())) {
             this.bg_calc_max = bg_calc_max;
             MyEspresso.enterTextFromKeyboard(edit_text_bg_calc_max, bg_calc_max);
+            return true;
         }
+        return false;
     }
 
     public int getBg_target() {
         return bg_target;
     }
 
-    public void setBg_target(Integer bg_target) {
+    public boolean setBg_target(Integer bg_target) {
         if ((this.bg_target == null) || (this.bg_target.intValue() != bg_target.intValue())) {
             this.bg_target = bg_target;
             MyEspresso.enterTextFromKeyboard(edit_text_bg_target, bg_target);
+            return true;
         }
+        return false;
     }
 
     public int getBg_correctabove() {
         return bg_correctabove;
     }
 
-    public void setBg_correctabove(Integer bg_correctabove) {
+    public boolean setBg_correctabove(Integer bg_correctabove) {
         if ((this.bg_correctabove == null) || (this.bg_correctabove.intValue() != bg_correctabove.intValue())) {
             this.bg_correctabove = bg_correctabove;
             MyEspresso.enterTextFromKeyboard(edit_text_bg_correctabove, bg_correctabove);
+            return true;
         }
+        return false;
     }
 
     public int getBg_current() {
         return bg_current;
     }
 
-    public void setBg_current(Integer bg_current) {
+    public boolean setBg_current(Integer bg_current) {
         if ((this.bg_current == null) || (this.bg_current.intValue() != bg_current.intValue())) {
             this.bg_current = bg_current;
             MyEspresso.enterTextFromKeyboard(edit_text_bg_current, bg_current);
+            return true;
         }
+        return false;
     }
 
     public int getCorrection_factor() {
         return correction_factor;
     }
 
-    public void setCorrection_factor(Integer correction_factor) {
+    public boolean setCorrection_factor(Integer correction_factor) {
         if ((this.correction_factor == null) || (this.correction_factor.intValue() != correction_factor.intValue())) {
             this.correction_factor = correction_factor;
             MyEspresso.enterTextFromKeyboard(edit_text_correction_factor, correction_factor);
+            return true;
         }
+        return false;
     }
 
     public double getMeal_iob() {
         return meal_iob;
     }
 
-    public void setMeal_iob(Double meal_iob) {
+    public boolean setMeal_iob(Double meal_iob) {
         if ((this.meal_iob == null) || (this.meal_iob.doubleValue() != meal_iob.doubleValue())) {
             this.meal_iob = meal_iob;
             MyEspresso.enterTextFromKeyboard(edit_text_meal_iob, meal_iob);
+            return true;
         }
+        return false;
     }
 
-    public void setCorrection_iob(Double correction_iob) {
+    public boolean setCorrection_iob(Double correction_iob) {
         if ((this.correction_iob == null) || (this.correction_iob.doubleValue() != correction_iob.doubleValue())) {
             this.correction_iob = correction_iob;
             MyEspresso.enterTextFromKeyboard(edit_text_correction_iob, correction_iob);
+            return true;
         }
+        return false;
     }
 
     public int getMeal_carbs() {
         return meal_carbs;
     }
 
-    public void setMeal_carbs(Integer meal_carbs) {
+    public boolean setMeal_carbs(Integer meal_carbs) {
         if ((this.meal_carbs == null) || (this.meal_carbs.intValue() != meal_carbs.intValue())) {
             this.meal_carbs = meal_carbs;
             MyEspresso.enterTextFromKeyboard(edit_text_meal_carbs, meal_carbs);
+            return true;
         }
+        return false;
     }
 
     public int getMeal_ratio() {
         return meal_ratio;
     }
 
-    public void setMeal_ratio(Integer meal_ratio) {
+    public boolean setMeal_ratio(Integer meal_ratio) {
         if ((this.meal_ratio == null) || (this.meal_ratio.intValue() != meal_ratio.intValue())) {
             this.meal_ratio = meal_ratio;
             MyEspresso.enterTextFromKeyboard(edit_text_meal_ratio, meal_ratio);
+            return true;
         }
+        return false;
     }
 
     public boolean isReverse_correction() {
         return reverse_correction;
     }
 
-    public void setReverse_correction(boolean reverse_correction) {
-        if (reverse_correction_status = reverse_correction) {
+    public boolean setReverse_correction(boolean reverse_correction) {
+        if (this.reverse_correction != reverse_correction) {
             this.reverse_correction = reverse_correction;
             MyEspresso.clickButton(button_reverse_correction);
+            return true;
         }
+        return false;
     }
 }
