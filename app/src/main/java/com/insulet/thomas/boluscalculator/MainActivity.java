@@ -41,6 +41,8 @@ public class MainActivity extends AppCompatActivity implements EditText.OnEditor
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        bolusCalculator = new BolusCalculator();
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         if(toolbar != null) {
             setSupportActionBar(toolbar);
@@ -80,7 +82,6 @@ public class MainActivity extends AppCompatActivity implements EditText.OnEditor
         updateData();
 
         // Calculate the result
-        bolusCalculator = new BolusCalculator();
         bolusCalculator.updateResult();
         String result = bolusCalculator.getResult();
         text_view_result        = (TextView) findViewById(R.id.text_view_result);

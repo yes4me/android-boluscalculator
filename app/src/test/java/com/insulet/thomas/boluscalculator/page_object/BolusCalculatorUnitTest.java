@@ -16,8 +16,11 @@ public class BolusCalculatorUnitTest {
     @Test
     public void bolusCalculator() throws Exception {
         BolusCalculator bolusCalculator = new BolusCalculator();
+        // Use the default values
         bolusCalculator.updateResult();
-        //System.out.println( bolusCalculator.getResult() );
+        // System.out.println( bolusCalculator.getResult() );
+
+        // Check the result
         assertEquals(bolusCalculator.getCorrectionBolus(), 0, 0);
         assertEquals(bolusCalculator.getMealBolus(), 3.1, 0);
     }
