@@ -10,9 +10,7 @@
     tools:context="com.insulet.thomas.boluscalculator.MainActivity"
     tools:showIn="@layout/activity_main"
     android:descendantFocusability="beforeDescendants"
-    android:focusable="true"
-    android:focusableInTouchMode="true"
-    >
+    android:paddingTop="60dp">
 
     <!-- ===========================================================================================
     Settings

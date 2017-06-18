@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">BolusCalculator v1.1</string>
     <string name="action_settings">Bolus Calculator</string>
+    <string name="author">Thomas Nguyen\n thomas.ejob@gmail.com</string>
 
     <string name="text_header_bg_range">BG range for Calculation</string>
     <string name="text_view_bg_calc_min">min: </string>

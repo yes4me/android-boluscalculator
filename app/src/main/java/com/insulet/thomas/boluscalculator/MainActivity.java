@@ -8,10 +8,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.KeyEvent;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.insulet.thomas.boluscalculator.bolus.BolusCalculator;
 import com.insulet.thomas.boluscalculator.util.MyString;
@@ -47,8 +50,8 @@ public class MainActivity extends AppCompatActivity implements EditText.OnEditor
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         if(toolbar != null) {
             // replace ActionBar with Toolbar by using setSupportActionBar() method
-            String mystring = getResources().getString(R.string.edit_text_correction_factor);
-            toolbar.setTitle(mystring);
+            String title = getResources().getString(R.string.app_name);
+            toolbar.setTitle(title);
             setSupportActionBar(toolbar);
         }
 
@@ -169,6 +172,10 @@ public class MainActivity extends AppCompatActivity implements EditText.OnEditor
         text_view_result.setText(result);
     }
 
+    /* =============================================================================================
+    Private methods for updating the values on the screen
+    ============================================================================================= */
+
     public void updateData() {
         edit_text_bg_calc_min.setText( MyString.simplify(bolusCalculator.getBgCalc_min()) );
         edit_text_bg_calc_max.setText( MyString.simplify(bolusCalculator.getBgCalc_max()) );
@@ -193,7 +200,28 @@ public class MainActivity extends AppCompatActivity implements EditText.OnEditor
         }
     }
 
-    public String getEdit_text_bg_calc_min() {
-        return edit_text_bg_calc_min.getText().toString();
+    /* =============================================================================================
+    Toolbar methods
+    ============================================================================================= */
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    // Activity's overrided method used to handle click events on action bar menu items
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // The action bar will automatically handle clicks on the Home/Up button, so long as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+        if (id == R.id.about) {
+            String author = getResources().getString(R.string.author);
+
+            Toast.makeText(getApplicationContext(), author, Toast.LENGTH_LONG).show();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
