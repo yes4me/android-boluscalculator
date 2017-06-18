@@ -2,8 +2,6 @@ package com.insulet.thomas.boluscalculator;
 
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.v4.content.ContextCompat;
-import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -17,7 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.insulet.thomas.boluscalculator.bolus.BolusCalculator;
-import com.insulet.thomas.boluscalculator.util.MyString;
+import com.insulet.thomas.boluscalculator.util.StringUtil;
 
 public class MainActivity extends AppCompatActivity implements EditText.OnEditorActionListener, View.OnClickListener {
     private static final String TAG = MainActivity.class.getSimpleName();
@@ -109,43 +107,43 @@ public class MainActivity extends AppCompatActivity implements EditText.OnEditor
         switch(v.getId()){
             case R.id.edit_text_bg_calc_min:
                 bolusCalculator.setBgCalc_min(value);
-                edit_text_bg_calc_min.setText( MyString.simplify(bolusCalculator.getBgCalc_min()) );
+                edit_text_bg_calc_min.setText( StringUtil.simplify(bolusCalculator.getBgCalc_min()) );
                 break;
             case R.id.edit_text_bg_calc_max:
                 bolusCalculator.setBgCalc_max(value);
-                edit_text_bg_calc_max.setText( MyString.simplify(bolusCalculator.getBgCalc_max()) );
+                edit_text_bg_calc_max.setText( StringUtil.simplify(bolusCalculator.getBgCalc_max()) );
                 break;
             case R.id.edit_text_bg_target:
                 bolusCalculator.setBgTarget(value);
-                edit_text_bg_target.setText( MyString.simplify(bolusCalculator.getBgTarget()) );
+                edit_text_bg_target.setText( StringUtil.simplify(bolusCalculator.getBgTarget()) );
                 break;
             case R.id.edit_text_bg_correctabove:
                 bolusCalculator.setBgCorrectAbove(value);
-                edit_text_bg_correctabove.setText( MyString.simplify(bolusCalculator.getBgCorrectAbove()) );
+                edit_text_bg_correctabove.setText( StringUtil.simplify(bolusCalculator.getBgCorrectAbove()) );
                 break;
             case R.id.edit_text_bg_current:
                 bolusCalculator.setBgCurrent(value);
-                edit_text_bg_current.setText( MyString.simplify(bolusCalculator.getBgCurrent()) );
+                edit_text_bg_current.setText( StringUtil.simplify(bolusCalculator.getBgCurrent()) );
                 break;
             case R.id.edit_text_correction_factor:
                 bolusCalculator.setCorrectionFactor(value);
-                edit_text_correction_factor.setText( MyString.simplify(bolusCalculator.getCorrectionFactor()) );
+                edit_text_correction_factor.setText( StringUtil.simplify(bolusCalculator.getCorrectionFactor()) );
                 break;
             case R.id.edit_text_meal_iob:
                 bolusCalculator.setAdjustmentMeal_IOB(value);
-                edit_text_meal_iob.setText( MyString.simplify(bolusCalculator.getAdjustmentMeal_IOB()) );
+                edit_text_meal_iob.setText( StringUtil.simplify(bolusCalculator.getAdjustmentMeal_IOB()) );
                 break;
             case R.id.edit_text_correction_iob:
                 bolusCalculator.setAdjustmentCorrection_IOB(value);
-                edit_text_correction_iob.setText( MyString.simplify(bolusCalculator.getAdjustmentCorrection_IOB()) );
+                edit_text_correction_iob.setText( StringUtil.simplify(bolusCalculator.getAdjustmentCorrection_IOB()) );
                 break;
             case R.id.edit_text_meal_carbs:
                 bolusCalculator.setMealCarbs(value);
-                edit_text_meal_carbs.setText( MyString.simplify(bolusCalculator.getMealCarbs()) );
+                edit_text_meal_carbs.setText( StringUtil.simplify(bolusCalculator.getMealCarbs()) );
                 break;
             case R.id.edit_text_meal_ratio:
                 bolusCalculator.setMeal_ic_ratio(value);
-                edit_text_meal_ratio.setText( MyString.simplify(bolusCalculator.getMeal_ic_ratio()) );
+                edit_text_meal_ratio.setText( StringUtil.simplify(bolusCalculator.getMeal_ic_ratio()) );
                 break;
             default:
                 Log.d(TAG, "Unknown View in onEditorAction");
@@ -177,16 +175,16 @@ public class MainActivity extends AppCompatActivity implements EditText.OnEditor
     ============================================================================================= */
 
     public void updateData() {
-        edit_text_bg_calc_min.setText( MyString.simplify(bolusCalculator.getBgCalc_min()) );
-        edit_text_bg_calc_max.setText( MyString.simplify(bolusCalculator.getBgCalc_max()) );
-        edit_text_bg_target.setText( MyString.simplify(bolusCalculator.getBgTarget()) );
-        edit_text_bg_correctabove.setText( MyString.simplify(bolusCalculator.getBgCorrectAbove()) );
-        edit_text_bg_current.setText( MyString.simplify(bolusCalculator.getBgCurrent()) );
-        edit_text_correction_factor.setText( MyString.simplify(bolusCalculator.getCorrectionFactor()) );
-        edit_text_meal_iob.setText( MyString.simplify(bolusCalculator.getAdjustmentMeal_IOB()) );
-        edit_text_correction_iob.setText( MyString.simplify(bolusCalculator.getAdjustmentCorrection_IOB()) );
-        edit_text_meal_carbs.setText( MyString.simplify(bolusCalculator.getMealCarbs()) );
-        edit_text_meal_ratio.setText( MyString.simplify(bolusCalculator.getMeal_ic_ratio()) );
+        edit_text_bg_calc_min.setText( StringUtil.simplify(bolusCalculator.getBgCalc_min()) );
+        edit_text_bg_calc_max.setText( StringUtil.simplify(bolusCalculator.getBgCalc_max()) );
+        edit_text_bg_target.setText( StringUtil.simplify(bolusCalculator.getBgTarget()) );
+        edit_text_bg_correctabove.setText( StringUtil.simplify(bolusCalculator.getBgCorrectAbove()) );
+        edit_text_bg_current.setText( StringUtil.simplify(bolusCalculator.getBgCurrent()) );
+        edit_text_correction_factor.setText( StringUtil.simplify(bolusCalculator.getCorrectionFactor()) );
+        edit_text_meal_iob.setText( StringUtil.simplify(bolusCalculator.getAdjustmentMeal_IOB()) );
+        edit_text_correction_iob.setText( StringUtil.simplify(bolusCalculator.getAdjustmentCorrection_IOB()) );
+        edit_text_meal_carbs.setText( StringUtil.simplify(bolusCalculator.getMealCarbs()) );
+        edit_text_meal_ratio.setText( StringUtil.simplify(bolusCalculator.getMeal_ic_ratio()) );
         updateBackgroundReverseCorrection();
     }
     private void updateBackgroundReverseCorrection() {

@@ -4,14 +4,14 @@ package com.insulet.thomas.boluscalculator.util;
  * Created by thomas on 6/11/2017.
  */
 
-public class MyNumber {
-    // MyNumber of digit before the comma
+public class NumberUtil {
+    // NumberUtil of digits before the comma
     public static int numberInteger(double number) {
         int decimal = (int) number;
         return String.valueOf(decimal).length();
     }
 
-    // Number of digit after the comma
+    // Number of digits after the comma
     public static int numberFractional(double number) {
         String value = String.valueOf(number);
         value = value.replaceAll(".0$", "");

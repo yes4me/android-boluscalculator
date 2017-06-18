@@ -4,9 +4,9 @@ import android.content.Context;
 import android.util.Log;
 
 import com.insulet.thomas.boluscalculator.R;
-import com.insulet.thomas.boluscalculator.util.MyConversion;
-import com.insulet.thomas.boluscalculator.util.MyNumber;
-import com.insulet.thomas.boluscalculator.util.MyString;
+import com.insulet.thomas.boluscalculator.util.ConversionUtil;
+import com.insulet.thomas.boluscalculator.util.NumberUtil;
+import com.insulet.thomas.boluscalculator.util.StringUtil;
 
 /**
  * Created by thomas on 6/11/2017.
@@ -40,18 +40,18 @@ public class BolusCalculator {
 
     public BolusCalculator(Context context) {
         // Initialize the input values
-        bgCalc_min      = MyConversion.convertToDouble( context.getString(R.string.edit_text_bg_calc_min) );
-        bgCalc_max      = MyConversion.convertToDouble( context.getString(R.string.edit_text_bg_calc_max) );
+        bgCalc_min      = ConversionUtil.convertToDouble( context.getString(R.string.edit_text_bg_calc_min) );
+        bgCalc_max      = ConversionUtil.convertToDouble( context.getString(R.string.edit_text_bg_calc_max) );
         // durationBolusCalculatorOn is not used yet
         // durationInsulinAction is not used yet
-        bgTarget        = MyConversion.convertToDouble( context.getString(R.string.edit_text_bg_target) );
-        bgCorrectAbove	= MyConversion.convertToDouble( context.getString(R.string.edit_text_bg_correctabove) );
-        bgCurrent       = MyConversion.convertToDouble( context.getString(R.string.edit_text_bg_current) );
-        correctionFactor= MyConversion.convertToDouble( context.getString(R.string.edit_text_correction_factor) );
-        adjustmentMeal_IOB = MyConversion.convertToDouble( context.getString(R.string.edit_text_meal_iob) );
-        adjustmentCorrection_IOB = MyConversion.convertToDouble( context.getString(R.string.edit_text_correction_iob) );
-        mealCarbs		= MyConversion.convertToDouble( context.getString(R.string.edit_text_meal_carbs) );
-        meal_ic_ratio	= MyConversion.convertToDouble( context.getString(R.string.edit_text_meal_ratio) );
+        bgTarget        = ConversionUtil.convertToDouble( context.getString(R.string.edit_text_bg_target) );
+        bgCorrectAbove	= ConversionUtil.convertToDouble( context.getString(R.string.edit_text_bg_correctabove) );
+        bgCurrent       = ConversionUtil.convertToDouble( context.getString(R.string.edit_text_bg_current) );
+        correctionFactor= ConversionUtil.convertToDouble( context.getString(R.string.edit_text_correction_factor) );
+        adjustmentMeal_IOB = ConversionUtil.convertToDouble( context.getString(R.string.edit_text_meal_iob) );
+        adjustmentCorrection_IOB = ConversionUtil.convertToDouble( context.getString(R.string.edit_text_correction_iob) );
+        mealCarbs		= ConversionUtil.convertToDouble( context.getString(R.string.edit_text_meal_carbs) );
+        meal_ic_ratio	= ConversionUtil.convertToDouble( context.getString(R.string.edit_text_meal_ratio) );
     }
 
     /* =============================================================================================
@@ -200,7 +200,7 @@ public class BolusCalculator {
         // bgCurrent<0 <=>BG is not recorded
         if (bgCurrent < 0) {
             correctionBolus	= 0;
-            mealBolus		= MyNumber.round(mealCarbs / meal_ic_ratio, 0.05);
+            mealBolus		= NumberUtil.round(mealCarbs / meal_ic_ratio, 0.05);
             return;
         }
 
@@ -226,12 +226,12 @@ public class BolusCalculator {
         double adjustmentCorrection_IOB_transfer = adjustmentCorrection_IOB;
         if (bgCorrectAbove < bgCurrent) {
             correctionBolus = (bgCurrent - bgTarget) / correctionFactor;
-            correctionBolus = MyNumber.round(correctionBolus - adjustmentMeal_IOB, 0.05);
+            correctionBolus = NumberUtil.round(correctionBolus - adjustmentMeal_IOB, 0.05);
             if (correctionBolus < 0) {
                 correctionBolus = 0;
             }
 
-            correctionBolus = MyNumber.round(correctionBolus - adjustmentCorrection_IOB, 0.05);
+            correctionBolus = NumberUtil.round(correctionBolus - adjustmentCorrection_IOB, 0.05);
             if (correctionBolus < 0) {
                 adjustmentCorrection_IOB_transfer = Math.abs(correctionBolus);
                 correctionBolus = 0;
@@ -246,7 +246,7 @@ public class BolusCalculator {
             }
         }
 
-        mealBolus = MyNumber.round(mealCarbs / meal_ic_ratio - adjustmentCorrection_IOB_transfer, 0.05);
+        mealBolus = NumberUtil.round(mealCarbs / meal_ic_ratio - adjustmentCorrection_IOB_transfer, 0.05);
         if (mealBolus < 0)
             mealBolus = 0;
     }
@@ -268,13 +268,13 @@ public class BolusCalculator {
         }
 
         String result;
-        result = "correction bolus = " + MyString.simplify(correctionBolus, 2);
-        result += "\nmeal bolus = " + MyString.simplify(mealBolus, 2);
+        result = "correction bolus = " + StringUtil.simplify(correctionBolus, 2);
+        result += "\nmeal bolus = " + StringUtil.simplify(mealBolus, 2);
 
         double totalBolus = correctionBolus + mealBolus;
         if (totalBolus < 0)
             totalBolus = 0;
-        result += "\nTOTAL BOLUS = " + MyString.simplify(totalBolus, 2);
+        result += "\nTOTAL BOLUS = " + StringUtil.simplify(totalBolus, 2);
         return result;
     }
 }

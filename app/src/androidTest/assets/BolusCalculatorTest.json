@@ -17,7 +17,7 @@
       "correction_bolus": 0.0,
       "meal_bolus": 3.1,
       "total_bolus": 3.1,
-      "text_displayed":"correction bolus = 0\nmeal bolus = 3.1\nTOTAL BOLUS = 3.1"
+      "text_displayed":"correction bolus = 0.00\nmeal bolus = 3.10\nTOTAL BOLUS = 3.10"
     }
   },
   {
@@ -38,7 +38,7 @@
       "correction_bolus": 0.0,
       "meal_bolus": 3.1,
       "total_bolus": 3.1,
-      "text_displayed":"correction bolus = 0\nmeal bolus = 3.1\nTOTAL BOLUS = 3.1"
+      "text_displayed":"correction bolus = 0.00\nmeal bolus = 3.10\nTOTAL BOLUS = 3.10"
     }
   },
   {
@@ -143,7 +143,7 @@
       "correction_bolus": 0.0,
       "meal_bolus": 2.9,
       "total_bolus": 2.9,
-      "text_displayed":"correction bolus = 0\nmeal bolus = 2.9\nTOTAL BOLUS = 2.9"
+      "text_displayed":"correction bolus = 0.00\nmeal bolus = 2.90\nTOTAL BOLUS = 2.90"
     }
   },
   {
@@ -164,7 +164,7 @@
       "correction_bolus": 0.0,
       "meal_bolus": 2.9,
       "total_bolus": 2.9,
-      "text_displayed":"correction bolus = 0\nmeal bolus = 2.9\nTOTAL BOLUS = 2.9"
+      "text_displayed":"correction bolus = 0.00\nmeal bolus = 2.90\nTOTAL BOLUS = 2.90"
     }
   },
   {
@@ -185,7 +185,7 @@
       "correction_bolus": 0.0,
       "meal_bolus": 2.5,
       "total_bolus": 2.5,
-      "text_displayed":"correction bolus = 0\nmeal bolus = 2.5\nTOTAL BOLUS = 2.5"
+      "text_displayed":"correction bolus = 0.00\nmeal bolus = 2.50\nTOTAL BOLUS = 2.50"
     }
   },
   {
@@ -206,7 +206,7 @@
       "correction_bolus": 0.0,
       "meal_bolus": 2.5,
       "total_bolus": 2.5,
-      "text_displayed":"correction bolus = 0\nmeal bolus = 2.5\nTOTAL BOLUS = 2.5"
+      "text_displayed":"correction bolus = 0.00\nmeal bolus = 2.50\nTOTAL BOLUS = 2.50"
     }
   },
   {
@@ -227,7 +227,7 @@
       "correction_bolus": 0.0,
       "meal_bolus": 2.5,
       "total_bolus": 2.5,
-      "text_displayed":"correction bolus = 0\nmeal bolus = 2.5\nTOTAL BOLUS = 2.5"
+      "text_displayed":"correction bolus = 0.00\nmeal bolus = 2.50\nTOTAL BOLUS = 2.50"
     }
   },
   {
@@ -248,7 +248,7 @@
       "correction_bolus": -0.6,
       "meal_bolus": 2.5,
       "total_bolus": 1.9,
-      "text_displayed":"correction bolus = -0.6\nmeal bolus = 2.5\nTOTAL BOLUS = 1.9"
+      "text_displayed":"correction bolus = -0.60\nmeal bolus = 2.50\nTOTAL BOLUS = 1.90"
     }
   },
   {
@@ -269,7 +269,7 @@
       "correction_bolus": -0.4,
       "meal_bolus": 0.0,
       "total_bolus": 0.0,
-      "text_displayed":"correction bolus = 0\nmeal bolus = 0\nTOTAL BOLUS = 0"
+      "text_displayed":"correction bolus = 0.00\nmeal bolus = 0.00\nTOTAL BOLUS = 0.00"
     }
   },
   {
@@ -290,7 +290,7 @@
       "correction_bolus": -0.4,
       "meal_bolus": 0.0,
       "total_bolus": 0.0,
-      "text_displayed":"correction bolus = -0.4\nmeal bolus = 0\nTOTAL BOLUS = 0"
+      "text_displayed":"correction bolus = -0.40\nmeal bolus = 0.00\nTOTAL BOLUS = 0.00"
     }
   },
   {
@@ -311,7 +311,7 @@
       "correction_bolus": 0,
       "meal_bolus": 1.3,
       "total_bolus": 1.3,
-      "text_displayed":"correction bolus = 0\nmeal bolus = 1.3\nTOTAL BOLUS = 1.3"
+      "text_displayed":"correction bolus = 0.00\nmeal bolus = 1.30\nTOTAL BOLUS = 1.30"
     }
   },
   {
@@ -332,7 +332,7 @@
       "correction_bolus": 0,
       "meal_bolus": 1.3,
       "total_bolus": 1.3,
-      "text_displayed":"correction bolus = 0\nmeal bolus = 1.3\nTOTAL BOLUS = 1.3"
+      "text_displayed":"correction bolus = 0.00\nmeal bolus = 1.30\nTOTAL BOLUS = 1.30"
     }
   }
 ]

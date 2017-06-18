@@ -4,7 +4,7 @@ package com.insulet.thomas.boluscalculator.util;
  * Created by thomas on 6/17/2017.
  */
 
-public class MyConversion {
+public class ConversionUtil {
     public static int convertToInt(String text) {
         try {
             return Integer.parseInt(text);
