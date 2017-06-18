@@ -41,12 +41,15 @@ public class MainActivity extends AppCompatActivity implements EditText.OnEditor
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        bolusCalculator = new BolusCalculator();
+        bolusCalculator = new BolusCalculator(this);
 
+        // To render the toolbar
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         if(toolbar != null) {
+            // replace ActionBar with Toolbar by using setSupportActionBar() method
+            String mystring = getResources().getString(R.string.edit_text_correction_factor);
+            toolbar.setTitle(mystring);
             setSupportActionBar(toolbar);
-            //getSupportActionBar().setTitle("My custom toolbar!");
         }
 
         // Input values

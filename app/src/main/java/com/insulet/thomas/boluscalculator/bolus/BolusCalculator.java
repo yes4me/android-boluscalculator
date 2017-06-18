@@ -1,7 +1,10 @@
 package com.insulet.thomas.boluscalculator.bolus;
 
+import android.content.Context;
 import android.util.Log;
 
+import com.insulet.thomas.boluscalculator.R;
+import com.insulet.thomas.boluscalculator.util.MyConversion;
 import com.insulet.thomas.boluscalculator.util.MyNumber;
 import com.insulet.thomas.boluscalculator.util.MyString;
 
@@ -35,7 +38,21 @@ public class BolusCalculator {
     CONSTRUCTOR
     ============================================================================================= */
 
-    public BolusCalculator() {}
+    public BolusCalculator(Context context) {
+        // Initialize the input values
+        bgCalc_min      = MyConversion.convertToDouble( context.getString(R.string.edit_text_bg_calc_min) );
+        bgCalc_max      = MyConversion.convertToDouble( context.getString(R.string.edit_text_bg_calc_max) );
+        // durationBolusCalculatorOn is not used yet
+        // durationInsulinAction is not used yet
+        bgTarget        = MyConversion.convertToDouble( context.getString(R.string.edit_text_bg_target) );
+        bgCorrectAbove	= MyConversion.convertToDouble( context.getString(R.string.edit_text_bg_correctabove) );
+        bgCurrent       = MyConversion.convertToDouble( context.getString(R.string.edit_text_bg_current) );
+        correctionFactor= MyConversion.convertToDouble( context.getString(R.string.edit_text_correction_factor) );
+        adjustmentMeal_IOB = MyConversion.convertToDouble( context.getString(R.string.edit_text_meal_iob) );
+        adjustmentCorrection_IOB = MyConversion.convertToDouble( context.getString(R.string.edit_text_correction_iob) );
+        mealCarbs		= MyConversion.convertToDouble( context.getString(R.string.edit_text_meal_carbs) );
+        meal_ic_ratio	= MyConversion.convertToDouble( context.getString(R.string.edit_text_meal_ratio) );
+    }
 
     /* =============================================================================================
     GETTER AND SETTERS

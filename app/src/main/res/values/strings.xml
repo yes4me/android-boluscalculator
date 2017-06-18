@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">BolusCalculator v1.0</string>
+    <string name="app_name">BolusCalculator v1.1</string>
     <string name="action_settings">Bolus Calculator</string>
 
     <string name="text_header_bg_range">BG range for Calculation</string>
