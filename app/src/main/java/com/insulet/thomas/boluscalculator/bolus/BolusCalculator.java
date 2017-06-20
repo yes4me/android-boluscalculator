@@ -6,6 +6,7 @@ import android.util.Log;
 import com.insulet.thomas.boluscalculator.R;
 import com.insulet.thomas.boluscalculator.util.ConversionUtil;
 import com.insulet.thomas.boluscalculator.util.NumberUtil;
+import com.insulet.thomas.boluscalculator.util.ResourceUtil;
 import com.insulet.thomas.boluscalculator.util.StringUtil;
 
 /**
@@ -39,6 +40,9 @@ public class BolusCalculator {
     ============================================================================================= */
 
     public BolusCalculator(Context context) {
+        ResourceUtil resourceUtil = new ResourceUtil(context);
+
+        /*
         // Initialize the input values
         bgCalc_min      = ConversionUtil.convertToDouble( context.getString(R.string.edit_text_bg_calc_min) );
         bgCalc_max      = ConversionUtil.convertToDouble( context.getString(R.string.edit_text_bg_calc_max) );
@@ -52,6 +56,21 @@ public class BolusCalculator {
         adjustmentCorrection_IOB = ConversionUtil.convertToDouble( context.getString(R.string.edit_text_correction_iob) );
         mealCarbs		= ConversionUtil.convertToDouble( context.getString(R.string.edit_text_meal_carbs) );
         meal_ic_ratio	= ConversionUtil.convertToDouble( context.getString(R.string.edit_text_meal_ratio) );
+        */
+
+        // Initialize the input values
+        bgCalc_min      = resourceUtil.getDouble("edit_text_bg_calc_min");
+        bgCalc_max      = resourceUtil.getDouble("edit_text_bg_calc_max");
+        // durationBolusCalculatorOn is not used yet
+        // durationInsulinAction is not used yet
+        bgTarget        = resourceUtil.getDouble("edit_text_bg_target");
+        bgCorrectAbove	= resourceUtil.getDouble("edit_text_bg_correctabove");
+        bgCurrent       = resourceUtil.getDouble("edit_text_bg_current");
+        correctionFactor= resourceUtil.getDouble("edit_text_correction_factor");
+        adjustmentMeal_IOB = resourceUtil.getDouble("edit_text_meal_iob");
+        adjustmentCorrection_IOB = resourceUtil.getDouble("edit_text_correction_iob");
+        mealCarbs		= resourceUtil.getDouble("edit_text_meal_carbs");
+        meal_ic_ratio	= resourceUtil.getDouble("edit_text_meal_ratio");
     }
 
     /* =============================================================================================

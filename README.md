@@ -49,7 +49,12 @@ This document will show you how to:
 ---
 
 * This was tested on Moto X, Android version 5.1
-* The UI was tested using the Android automation, Expresso, with the Test Recoder.
+* The UI was tested using the Android automation, Expresso, with the Test Recoder and UI automator.
+
+UI automator is used to find objects ID in Android application:
+* UI automator is located at: C:\Users\<user>\AppData\Local\Android\sdk\tools\bin\uiautomatorviewer.bat
+* Edit uiautomatorviewer.bat by adding the line: set prog_dir="C:\Users\thomas\AppData\Local\Android\sdk\tools\"
+* copy adb.exe from C:\Users\<user>\AppData\Local\Android\sdk\platform-tools to C:\Users\<user>\AppData\Local\Android\sdk\tools\bin
 
 ## Other notes
 ---
@@ -78,5 +83,6 @@ This document will show you how to:
 
     * [README.md: preview of the readme.md](http://dillinger.io/)
     * [JsonReader](https://developer.android.com/reference/android/util/JsonReader.html)
-    * [Mockito](https://examples.javacodegeeks.com/core-java/mockito/mockito-hello-world-example/)
+    * [Mockito easy](https://gojko.net/2009/10/23/mockito-in-six-easy-examples/)
+    * [Mockito adv](https://examples.javacodegeeks.com/core-java/mockito/mockito-hello-world-example/)
     * [Toolbar](http://abhiandroid.com/materialdesign/toolbar)

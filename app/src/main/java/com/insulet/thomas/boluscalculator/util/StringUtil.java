@@ -47,7 +47,7 @@ public class StringUtil {
     ============================================================================================= */
 
     public static void main(String[] args) {
-        System.out.println("Hello");
+        System.out.println("testing:");
         double d = 1;
         System.out.println( simplify(d, 2) );
 

@@ -18,7 +18,9 @@ public class BolusCalculatorUnitTest {
 
     @BeforeMethod
     public void setupMock() {
+        // Create a stub (or a mock)
         bolusCalculator = mock(BolusCalculator.class);
+        // Specify the stub value for a method
         when(bolusCalculator.getBgCalc_min()).thenReturn(70.0);
         when(bolusCalculator.getBgCalc_max()).thenReturn(600.0);
     }

@@ -15,6 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.insulet.thomas.boluscalculator.bolus.BolusCalculator;
+import com.insulet.thomas.boluscalculator.util.ResourceUtil;
 import com.insulet.thomas.boluscalculator.util.StringUtil;
 
 public class MainActivity extends AppCompatActivity implements EditText.OnEditorActionListener, View.OnClickListener {
@@ -47,9 +48,11 @@ public class MainActivity extends AppCompatActivity implements EditText.OnEditor
         // To render the toolbar
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         if(toolbar != null) {
-            // replace ActionBar with Toolbar by using setSupportActionBar() method
+            // String title = new ResourceUtil(this).getString("app_name");
             String title = getResources().getString(R.string.app_name);
             toolbar.setTitle(title);
+
+            // replace ActionBar with Toolbar by using setSupportActionBar() method
             setSupportActionBar(toolbar);
         }
 
@@ -215,6 +218,7 @@ public class MainActivity extends AppCompatActivity implements EditText.OnEditor
         // The action bar will automatically handle clicks on the Home/Up button, so long as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
         if (id == R.id.about) {
+            // String author = new ResourceUtil(this).getString("author");
             String author = getResources().getString(R.string.author);
 
             Toast.makeText(getApplicationContext(), author, Toast.LENGTH_LONG).show();
