@@ -16,6 +16,9 @@ import com.insulet.thomas.boluscalculator.utils.JsonBolusInput;
 import com.insulet.thomas.boluscalculator.utils.JsonBolusResult;
 import com.insulet.thomas.boluscalculator.utils.JsonBolusParser;
 import com.insulet.thomas.boluscalculator.utils.JsonBase;
+import com.insulet.thomas.boluscalculator.utils.MyEspresso;
+
+import junit.framework.Assert;
 
 import org.hamcrest.Description;
 import org.hamcrest.Matcher;
@@ -48,7 +51,8 @@ public class BolusCalculatorTest {
             JsonBase jsonBase = new JsonBolusParser();
             List<JsonBolus> bolusDataList = jsonBase.readJsonStream(FILENAME);
 
-            BolusCalculatorPage bolusCalculatorPage = new BolusCalculatorPage();
+            MainActivity activity = mActivityTestRule.getActivity();
+            BolusCalculatorPage bolusCalculatorPage = new BolusCalculatorPage(activity);
 
             for (JsonBolus bolusData : bolusDataList) {
                 // Input

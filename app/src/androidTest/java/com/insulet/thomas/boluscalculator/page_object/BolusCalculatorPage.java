@@ -2,6 +2,7 @@ package com.insulet.thomas.boluscalculator.page_object;
 
 import android.support.test.espresso.ViewInteraction;
 
+import com.insulet.thomas.boluscalculator.MainActivity;
 import com.insulet.thomas.boluscalculator.R;
 import com.insulet.thomas.boluscalculator.utils.MyEspresso;
 
@@ -49,14 +50,19 @@ public class BolusCalculatorPage {
     private Double total_bolus      = null;
     private String text_displayed   = "";
 
+    MainActivity activity;
+
     public BolusCalculatorPage() {}
+    public BolusCalculatorPage(MainActivity activity) {
+        this.activity = activity;
+    }
 
     /* =============================================================================================
-    GETTERS AND SETTERS
+    GETTERS(From the mainActivity) AND SETTERS
     ============================================================================================= */
 
     public int getBg_calc_min() {
-        return bg_calc_min;
+        return activity.getValueBgCalcMin();
     }
 
     public boolean setBg_calc_min(Integer bg_calc_min) {
@@ -69,7 +75,7 @@ public class BolusCalculatorPage {
     }
 
     public int getBg_calc_max() {
-        return bg_calc_max;
+        return activity.getValueBgCalcMax();
     }
 
     public boolean setBg_calc_max(Integer bg_calc_max) {
@@ -82,7 +88,7 @@ public class BolusCalculatorPage {
     }
 
     public int getBg_target() {
-        return bg_target;
+        return activity.getValueBgTarget();
     }
 
     public boolean setBg_target(Integer bg_target) {
@@ -95,7 +101,7 @@ public class BolusCalculatorPage {
     }
 
     public int getBg_correctabove() {
-        return bg_correctabove;
+        return activity.getValueBgCorrectAbove();
     }
 
     public boolean setBg_correctabove(Integer bg_correctabove) {
@@ -108,7 +114,7 @@ public class BolusCalculatorPage {
     }
 
     public int getBg_current() {
-        return bg_current;
+        return activity.getValueBgCurrent();
     }
 
     public boolean setBg_current(Integer bg_current) {
@@ -121,7 +127,7 @@ public class BolusCalculatorPage {
     }
 
     public int getCorrection_factor() {
-        return correction_factor;
+        return activity.getValueCorrectionFactor();
     }
 
     public boolean setCorrection_factor(Integer correction_factor) {
@@ -134,7 +140,7 @@ public class BolusCalculatorPage {
     }
 
     public double getMeal_iob() {
-        return meal_iob;
+        return activity.getValueMealIob();
     }
 
     public boolean setMeal_iob(Double meal_iob) {
@@ -144,6 +150,10 @@ public class BolusCalculatorPage {
             return true;
         }
         return false;
+    }
+
+    public double getCorrection_iob() {
+        return activity.getValueCorrectionIob();
     }
 
     public boolean setCorrection_iob(Double correction_iob) {
@@ -156,7 +166,7 @@ public class BolusCalculatorPage {
     }
 
     public int getMeal_carbs() {
-        return meal_carbs;
+        return activity.getValueMealCarbs();
     }
 
     public boolean setMeal_carbs(Integer meal_carbs) {
@@ -169,7 +179,7 @@ public class BolusCalculatorPage {
     }
 
     public int getMeal_ratio() {
-        return meal_ratio;
+        return activity.getValueMealRatio();
     }
 
     public boolean setMeal_ratio(Integer meal_ratio) {

@@ -15,6 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.insulet.thomas.boluscalculator.bolus.BolusCalculator;
+import com.insulet.thomas.boluscalculator.util.ConversionUtil;
 import com.insulet.thomas.boluscalculator.util.ResourceUtil;
 import com.insulet.thomas.boluscalculator.util.StringUtil;
 
@@ -93,6 +94,10 @@ public class MainActivity extends AppCompatActivity implements EditText.OnEditor
         String result = bolusCalculator.getResult();
         text_view_result        = (TextView) findViewById(R.id.text_view_result);
         text_view_result.setText(result);
+
+        // For testing purpose
+        Button test_button_id = (Button) findViewById(R.id.test_button_id);
+        test_button_id.setVisibility(View.INVISIBLE);
     }
 
     @Override
@@ -225,5 +230,40 @@ public class MainActivity extends AppCompatActivity implements EditText.OnEditor
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    /* =============================================================================================
+    For Espresso test
+    ============================================================================================= */
+
+    public int getValueBgCalcMin() {
+        return ConversionUtil.convertToInt( edit_text_bg_calc_min.getText().toString() );
+    }
+    public int getValueBgCalcMax() {
+        return ConversionUtil.convertToInt( edit_text_bg_calc_max.getText().toString() );
+    }
+    public int getValueBgTarget() {
+        return ConversionUtil.convertToInt( edit_text_bg_target.getText().toString() );
+    }
+    public int getValueBgCorrectAbove() {
+        return ConversionUtil.convertToInt( edit_text_bg_correctabove.getText().toString() );
+    }
+    public int getValueBgCurrent() {
+        return ConversionUtil.convertToInt( edit_text_bg_current.getText().toString() );
+    }
+    public int getValueCorrectionFactor() {
+        return ConversionUtil.convertToInt( edit_text_correction_factor.getText().toString() );
+    }
+    public double getValueMealIob() {
+        return ConversionUtil.convertToDouble( edit_text_meal_iob.getText().toString() );
+    }
+    public double getValueCorrectionIob() {
+        return ConversionUtil.convertToDouble( edit_text_correction_iob.getText().toString() );
+    }
+    public int getValueMealCarbs() {
+        return ConversionUtil.convertToInt( edit_text_meal_carbs.getText().toString() );
+    }
+    public int getValueMealRatio() {
+        return ConversionUtil.convertToInt( edit_text_meal_ratio.getText().toString() );
     }
 }

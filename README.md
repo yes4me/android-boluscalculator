@@ -38,6 +38,9 @@ This document will show you how to:
 2. get the source code
     * install the package: git
     * `git clone <url>`
+3. Android cellphone developer option
+    * turn on USB debugging
+    * turn of all animations
 
 ## Running the program
 ---
@@ -82,6 +85,7 @@ UI automator is used to find objects ID in Android application:
 * Tutorials:
 
     * [README.md: preview of the readme.md](http://dillinger.io/)
+    * [Espresso](http://www.vogella.com/tutorials/AndroidTestingEspresso/article.html)
     * [JsonReader](https://developer.android.com/reference/android/util/JsonReader.html)
     * [Mockito easy](https://gojko.net/2009/10/23/mockito-in-six-easy-examples/)
     * [Mockito adv](https://examples.javacodegeeks.com/core-java/mockito/mockito-hello-world-example/)
