@@ -163,7 +163,7 @@ public class MainActivity extends AppCompatActivity implements EditText.OnEditor
             case R.id.button_reverse_correction:
                 boolean status = bolusCalculator.isReverseCorrection();
                 bolusCalculator.setReverseCorrection(!status);
-                Toast.makeText(getApplicationContext(), "hello world", Toast.LENGTH_LONG).show();
+                // Toast.makeText(getApplicationContext(), "hello world", Toast.LENGTH_LONG).show();
                 updateBackgroundReverseCorrection();
                 break;
             default:

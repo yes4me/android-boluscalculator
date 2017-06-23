@@ -54,7 +54,7 @@ public class BolusCalculatorTest {
     }
 
     @Test
-    public void mainActivityTest() {
+    public void mainActivityTest() throws Exception {
         try {
             JsonBase jsonBase = new JsonBolusParser();
             List<JsonBolus> bolusDataList = jsonBase.readJsonStream(FILENAME);

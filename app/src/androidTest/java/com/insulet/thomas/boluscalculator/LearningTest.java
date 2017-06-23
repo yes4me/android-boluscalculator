@@ -76,7 +76,10 @@ public class LearningTest {
     }
 
     @Test
-    public void MyExpressoTest() throws InterruptedException {
+    public void MyExpressoTest() throws Exception {
+        // This will fail because the button button_reverse_correction need to have the following code:
+        // Toast.makeText(getApplicationContext(), "hello world", Toast.LENGTH_LONG).show();
+
         ViewInteraction button_reverse_correction = onView(allOf(withId(R.id.button_reverse_correction), isClickable()));
         MyEspresso.clickButton(button_reverse_correction);
         MyEspresso.checkToastText("hello world");
