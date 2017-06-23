@@ -85,6 +85,7 @@ UI automator is used to find objects ID in Android application:
 * Tutorials:
 
     * [README.md: preview of the readme.md](http://dillinger.io/)
+    * [Gradle dependencies conflict](https://stackoverflow.com/questions/36561037/conflict-with-dependency-com-android-supportsupport-annotations-resolved-ver)
     * [Espresso](http://www.vogella.com/tutorials/AndroidTestingEspresso/article.html)
     * [JsonReader](https://developer.android.com/reference/android/util/JsonReader.html)
     * [Mockito easy](https://gojko.net/2009/10/23/mockito-in-six-easy-examples/)

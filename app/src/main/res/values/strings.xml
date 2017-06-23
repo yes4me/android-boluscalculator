@@ -33,4 +33,19 @@
 
     <string name="text_button_reverse_correction">reverse correction</string>
     <string name="text_view_result"></string>
+
+
+    <string name="country_prompt">Choose a country</string>
+    <string-array name="country_arrays">
+        <item>Australia</item>
+        <item>Finland</item>
+        <item>France</item>
+        <item>India</item>
+        <item>New Zealand</item>
+        <item>Norway</item>
+        <item>Singapore</item>
+        <item>Sweden</item>
+        <item>United States</item>
+        <item>Vietnam</item>
+    </string-array>
 </resources>

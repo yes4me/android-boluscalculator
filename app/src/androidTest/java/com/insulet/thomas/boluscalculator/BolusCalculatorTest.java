@@ -1,6 +1,7 @@
 package com.insulet.thomas.boluscalculator;
 
 
+import android.app.Activity;
 import android.support.test.espresso.ViewInteraction;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
@@ -23,6 +24,7 @@ import junit.framework.Assert;
 import org.hamcrest.Description;
 import org.hamcrest.Matcher;
 import org.hamcrest.TypeSafeMatcher;
+import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -39,11 +41,17 @@ import static org.hamcrest.Matchers.allOf;
 public class BolusCalculatorTest {
     private static final String TAG = BolusCalculatorTest.class.getSimpleName();
     public final String FILENAME = "BolusCalculatorTest.json";
+    private Activity mActivity = null;
 
     private ViewInteraction text_view_result            = onView(allOf(withId(R.id.text_view_result)));
 
     @Rule
     public ActivityTestRule<MainActivity> mActivityTestRule = new ActivityTestRule<>(MainActivity.class);
+
+    @Before
+    public void setActivity() {
+        mActivity = mActivityTestRule.getActivity();
+    }
 
     @Test
     public void mainActivityTest() {

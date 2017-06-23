@@ -16,7 +16,6 @@ import android.widget.Toast;
 
 import com.insulet.thomas.boluscalculator.bolus.BolusCalculator;
 import com.insulet.thomas.boluscalculator.util.ConversionUtil;
-import com.insulet.thomas.boluscalculator.util.ResourceUtil;
 import com.insulet.thomas.boluscalculator.util.StringUtil;
 
 public class MainActivity extends AppCompatActivity implements EditText.OnEditorActionListener, View.OnClickListener {
@@ -94,10 +93,6 @@ public class MainActivity extends AppCompatActivity implements EditText.OnEditor
         String result = bolusCalculator.getResult();
         text_view_result        = (TextView) findViewById(R.id.text_view_result);
         text_view_result.setText(result);
-
-        // For testing purpose
-        Button test_button_id = (Button) findViewById(R.id.test_button_id);
-        test_button_id.setVisibility(View.INVISIBLE);
     }
 
     @Override
@@ -168,6 +163,7 @@ public class MainActivity extends AppCompatActivity implements EditText.OnEditor
             case R.id.button_reverse_correction:
                 boolean status = bolusCalculator.isReverseCorrection();
                 bolusCalculator.setReverseCorrection(!status);
+                Toast.makeText(getApplicationContext(), "hello world", Toast.LENGTH_LONG).show();
                 updateBackgroundReverseCorrection();
                 break;
             default:
@@ -233,7 +229,7 @@ public class MainActivity extends AppCompatActivity implements EditText.OnEditor
     }
 
     /* =============================================================================================
-    For Espresso test
+    Called by Espresso tests
     ============================================================================================= */
 
     public int getValueBgCalcMin() {
