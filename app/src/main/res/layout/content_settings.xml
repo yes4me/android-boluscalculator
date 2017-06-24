@@ -251,11 +251,11 @@
     Used to test Espresso ONLY
     ============================================================================================ -->
 
-    <View
-        style="@style/horizontal_line"
-        android:id="@+id/line_2"
-        app:layout_constraintTop_toBottomOf="@+id/button_reverse_correction"
-        />
+    <!--<View-->
+        <!--style="@style/horizontal_line"-->
+        <!--android:id="@+id/line_2"-->
+        <!--app:layout_constraintTop_toBottomOf="@+id/button_reverse_correction"-->
+        <!--/>-->
     <!--<Spinner-->
         <!--android:id="@+id/spinner_simple"-->
         <!--android:background="@color/colorPrimary"-->

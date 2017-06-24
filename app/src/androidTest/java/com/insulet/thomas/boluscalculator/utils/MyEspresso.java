@@ -8,10 +8,6 @@ import android.support.test.espresso.action.ViewActions;
 import android.support.test.uiautomator.UiDevice;
 import android.view.WindowManager;
 
-import com.insulet.thomas.boluscalculator.LearningTest;
-
-import junit.framework.Assert;
-
 import org.hamcrest.Description;
 import org.hamcrest.TypeSafeMatcher;
 
@@ -126,6 +122,15 @@ public class MyEspresso {
         try {
             viewInteraction.perform(click());
             onData(allOf(is(instanceOf(String.class)), is(text))).perform(click());
+            return true;
+        } catch (Exception e) {}
+        return false;
+    }
+
+    public static boolean clickSpinner(ViewInteraction viewInteraction, int position) {
+        try {
+            viewInteraction.perform(click());
+            onData(allOf(is(instanceOf(String.class)))).atPosition(position).perform(click());
             return true;
         } catch (Exception e) {}
         return false;
