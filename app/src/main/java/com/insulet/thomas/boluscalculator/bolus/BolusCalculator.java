@@ -215,7 +215,7 @@ public class BolusCalculator {
     CALCULATION
     ============================================================================================= */
 
-    public void updateResult() {
+    public void calculateBolus() {
         // bgCurrent<0 <=>BG is not recorded
         if (bgCurrent < 0) {
             correctionBolus	= 0;

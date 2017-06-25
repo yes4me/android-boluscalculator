@@ -43,7 +43,7 @@ public class BolusCalculatorTest {
     public final String FILENAME = "BolusCalculatorTest.json";
     private Activity mActivity = null;
 
-    private ViewInteraction text_view_result            = onView(allOf(withId(R.id.text_view_result)));
+    private ViewInteraction text_view_result = onView(allOf(withId(R.id.text_view_result)));
 
     @Rule
     public ActivityTestRule<MainActivity> mActivityTestRule = new ActivityTestRule<>(MainActivity.class);

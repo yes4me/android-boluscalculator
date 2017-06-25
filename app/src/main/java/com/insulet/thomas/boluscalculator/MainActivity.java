@@ -89,7 +89,7 @@ public class MainActivity extends AppCompatActivity implements EditText.OnEditor
         updateData();
 
         // Calculate the result
-        bolusCalculator.updateResult();
+        bolusCalculator.calculateBolus();
         String result = bolusCalculator.getResult();
         text_view_result        = (TextView) findViewById(R.id.text_view_result);
         text_view_result.setText(result);
@@ -151,7 +151,7 @@ public class MainActivity extends AppCompatActivity implements EditText.OnEditor
             default:
                 Log.d(TAG, "Unknown View in onEditorAction");
         }
-        bolusCalculator.updateResult();
+        bolusCalculator.calculateBolus();
         String result = bolusCalculator.getResult();
         text_view_result.setText(result);
         return false;
@@ -169,7 +169,7 @@ public class MainActivity extends AppCompatActivity implements EditText.OnEditor
             default:
                 Log.d(TAG, "Unknown View in onClick");
         }
-        bolusCalculator.updateResult();
+        bolusCalculator.calculateBolus();
         String result = bolusCalculator.getResult();
         text_view_result.setText(result);
     }

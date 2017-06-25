@@ -7,6 +7,7 @@
 * Author: Thomas Nguyen
 * Date started: 2017/06/10
 * Last update: 2017/06/11
+* Video: https://youtu.be/F0kDi4KFb_s
 
 ## Table of contents
 ---
@@ -73,6 +74,10 @@ UI automator is used to find objects ID in Android application:
 * Unit Test = white box testing
 * white box test = software testing method in which the internal structure/ design/ implementation of the item being tested is known to the tester
 * black box test = software testing method in which the internal structure/ design/ implementation of the item being tested is NOT known to the tester
+
+* BG = Blood Glucose
+* IC Ratio = Insulin-to-Carb Ratio. It is a ratio of how much insulin cover how much carbohydrate
+* IOB = Insulin On Board
 
 ## Sources
 ---
